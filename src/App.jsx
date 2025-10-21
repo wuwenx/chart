@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Send, Upload, X, Bot, User, Settings } from 'lucide-react'
+import { Send, Upload, X, Bot, User, Settings, Database, FileText } from 'lucide-react'
 import FileManager from './components/FileManager'
+import DatabaseChat from './components/DatabaseChat'
 
 const App = () => {
   const [messages, setMessages] = useState([
@@ -15,6 +16,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [uploadedFiles, setUploadedFiles] = useState([])
   const [showFileManager, setShowFileManager] = useState(false)
+  const [activeTab, setActiveTab] = useState('document') // 'document' 或 'database'
   const messagesEndRef = useRef(null)
   const fileInputRef = useRef(null)
 
@@ -25,6 +27,16 @@ const App = () => {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  const addMessage = (type, content) => {
+    const newMessage = {
+      id: Date.now(),
+      type,
+      content,
+      timestamp: new Date()
+    }
+    setMessages(prev => [...prev, newMessage])
+  }
 
   const handleFileUpload = (event) => {
     const files = Array.from(event.target.files)
@@ -48,7 +60,7 @@ const App = () => {
     setIsLoading(true)
     const formData = new FormData()
     uploadedFiles.forEach(file => {
-      formData.append('documents', file.file)
+      formData.append('files', file.file)
     })
 
     try {
@@ -58,35 +70,25 @@ const App = () => {
       })
 
       if (response.ok) {
-        const result = await response.json()
-        addMessage('assistant', `成功上传 ${uploadedFiles.length} 个文档！现在您可以询问关于这些文档的问题。`)
+        const data = await response.json()
+        addMessage('assistant', `✅ 成功上传 ${data.processedFiles} 个文件！`)
         setUploadedFiles([])
       } else {
         throw new Error('上传失败')
       }
     } catch (error) {
-      addMessage('assistant', '文档上传失败，请重试。')
+      addMessage('assistant', '❌ 文件上传失败，请重试')
     } finally {
       setIsLoading(false)
     }
   }
 
-  const addMessage = (type, content) => {
-    const newMessage = {
-      id: Date.now(),
-      type,
-      content,
-      timestamp: new Date()
-    }
-    setMessages(prev => [...prev, newMessage])
-  }
-
   const sendMessage = async () => {
     if (!inputValue.trim() || isLoading) return
 
-    const userMessage = inputValue.trim()
+    const question = inputValue.trim()
+    addMessage('user', question)
     setInputValue('')
-    addMessage('user', userMessage)
     setIsLoading(true)
 
     try {
@@ -96,7 +98,7 @@ const App = () => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          message: userMessage,
+          question,
           history: messages.slice(-10) // 只发送最近10条消息作为上下文
         })
       })
@@ -160,95 +162,130 @@ const App = () => {
         </button>
       </div>
 
-      <div className="chat-container">
-        <div className="messages">
-          {messages.map((message) => (
-            <div key={message.id} className={`message ${message.type}`}>
-              <div className="message-avatar">
-                {message.type === 'user' ? <User size={18} /> : <Bot size={18} />}
-              </div>
-              <div className="message-content">
-                {message.content}
-              </div>
-            </div>
-          ))}
-          
-          {isLoading && (
-            <div className="message assistant">
-              <div className="message-avatar">
-                <Bot size={18} />
-              </div>
-              <div className="message-content">
-                <div className="loading">
-                  正在思考
-                  <div className="loading-dots">
-                    <div className="loading-dot"></div>
-                    <div className="loading-dot"></div>
-                    <div className="loading-dot"></div>
+      <div className="tab-container">
+        <div className="tab-buttons">
+          <button 
+            className={`tab-btn ${activeTab === 'document' ? 'active' : ''}`}
+            onClick={() => setActiveTab('document')}
+          >
+            <FileText size={16} />
+            文档问答
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'database' ? 'active' : ''}`}
+            onClick={() => setActiveTab('database')}
+          >
+            <Database size={16} />
+            数据库查询
+          </button>
+        </div>
+
+        <div className="tab-content">
+          {activeTab === 'document' ? (
+            <div className="document-chat">
+              <div className="chat-container">
+                <div className="messages">
+                  {messages.map((message) => (
+                    <div key={message.id} className={`message ${message.type}`}>
+                      <div className="message-avatar">
+                        {message.type === 'user' ? <User size={18} /> : <Bot size={18} />}
+                      </div>
+                      <div className="message-content">
+                        {message.content}
+                      </div>
+                    </div>
+                  ))}
+                  
+                  {isLoading && (
+                    <div className="message assistant">
+                      <div className="message-avatar">
+                        <Bot size={18} />
+                      </div>
+                      <div className="message-content">
+                        <div className="loading">
+                          正在思考
+                          <div className="loading-dots">
+                            <div className="loading-dot"></div>
+                            <div className="loading-dot"></div>
+                            <div className="loading-dot"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div ref={messagesEndRef} />
+                </div>
+
+                <div className="input-container">
+                  {uploadedFiles.length > 0 && (
+                    <div className="file-upload">
+                      <div className="uploaded-files">
+                        {uploadedFiles.map(file => (
+                          <div key={file.id} className="uploaded-file">
+                            <span className="file-name">{file.name}</span>
+                            <span className="file-size">({formatFileSize(file.size)})</span>
+                            <button 
+                              className="remove-file-btn"
+                              onClick={() => removeFile(file.id)}
+                            >
+                              <X size={14} />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                      <button 
+                        className="upload-btn"
+                        onClick={uploadDocuments}
+                        disabled={isLoading}
+                      >
+                        {isLoading ? '上传中...' : '上传文档'}
+                      </button>
+                    </div>
+                  )}
+
+                  <div className="input-form">
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      multiple
+                      accept=".pdf,.doc,.docx,.txt,.md"
+                      onChange={handleFileUpload}
+                      style={{ display: 'none' }}
+                    />
+                    <button 
+                      className="upload-file-btn"
+                      onClick={() => fileInputRef.current?.click()}
+                    >
+                      <Upload size={18} />
+                    </button>
+                    <textarea
+                      ref={(el) => {
+                        if (el) {
+                          el.style.height = 'auto'
+                          el.style.height = el.scrollHeight + 'px'
+                        }
+                      }}
+                      className="input-field"
+                      value={inputValue}
+                      onChange={(e) => setInputValue(e.target.value)}
+                      onKeyPress={handleKeyPress}
+                      placeholder="请输入您的问题..."
+                      rows={1}
+                    />
+                    <button
+                      className="send-btn"
+                      onClick={sendMessage}
+                      disabled={!inputValue.trim() || isLoading}
+                    >
+                      <Send size={18} />
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
+          ) : (
+            <DatabaseChat />
           )}
-          <div ref={messagesEndRef} />
-        </div>
-
-        <div className="input-container">
-          {uploadedFiles.length > 0 && (
-            <div className="file-upload">
-              <div className="uploaded-files">
-                {uploadedFiles.map((file) => (
-                  <div key={file.id} className="file-tag">
-                    {file.name} ({formatFileSize(file.size)})
-                    <button onClick={() => removeFile(file.id)}>
-                      <X size={12} />
-                    </button>
-                  </div>
-                ))}
-              </div>
-              <button 
-                onClick={uploadDocuments}
-                disabled={isLoading}
-                className="send-button"
-                style={{ borderRadius: '8px', width: 'auto', padding: '8px 16px' }}
-              >
-                上传文档
-              </button>
-            </div>
-          )}
-
-          <div className="input-form">
-            <div className="file-upload">
-              <input
-                ref={fileInputRef}
-                type="file"
-                multiple
-                accept=".pdf,.doc,.docx,.txt,.md"
-                onChange={handleFileUpload}
-                id="file-upload"
-              />
-              <label htmlFor="file-upload" className="file-upload-label">
-                <Upload size={16} />
-                上传文档
-              </label>
-            </div>
-            
-            <textarea
-              className="input-field"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="输入您的问题..."
-              rows={1}
-            />
-            <button
-              className="send-button"
-              onClick={sendMessage}
-              disabled={!inputValue.trim() || isLoading}
-            >
-              <Send size={18} />
-            </button>
-          </div>
         </div>
       </div>
     </div>

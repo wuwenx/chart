@@ -300,6 +300,61 @@ app.get('/api/model-info', (req, res) => {
   }
 })
 
+// 数据库查询相关 API
+// 获取数据库概览
+app.get('/api/database/overview', async (req, res) => {
+  try {
+    const overview = await chatService.getDatabaseOverview()
+    res.json(overview)
+  } catch (error) {
+    console.error('获取数据库概览错误:', error)
+    res.status(500).json({ error: '获取数据库概览失败' })
+  }
+})
+
+// 执行数据库查询
+app.post('/api/database/query', async (req, res) => {
+  try {
+    const { question } = req.body
+    
+    if (!question) {
+      return res.status(400).json({ error: '查询问题不能为空' })
+    }
+
+    const result = await chatService.generateDatabaseResponse(question)
+    res.json({ 
+      success: true,
+      response: result,
+      timestamp: new Date().toISOString()
+    })
+  } catch (error) {
+    console.error('数据库查询错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '数据库查询失败',
+      message: error.message
+    })
+  }
+})
+
+// 测试数据库连接
+app.get('/api/database/test', async (req, res) => {
+  try {
+    await chatService.initializeDatabaseService()
+    res.json({ 
+      success: true,
+      message: '数据库连接测试成功'
+    })
+  } catch (error) {
+    console.error('数据库连接测试错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '数据库连接测试失败',
+      message: error.message
+    })
+  }
+})
+
 // 健康检查
 app.get('/api/health', (req, res) => {
   res.json({ 
@@ -310,7 +365,8 @@ app.get('/api/health', (req, res) => {
       vectorStore: !!vectorStore,
       chatService: !!chatService,
       codeAnalyzer: !!codeAnalyzer,
-      aiModelManager: !!aiModelManager
+      aiModelManager: !!aiModelManager,
+      databaseService: !!chatService?.sqlQueryService
     },
     aiModel: aiModelManager ? aiModelManager.getModelInfo() : null
   })

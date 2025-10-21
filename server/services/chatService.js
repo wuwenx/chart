@@ -1,12 +1,14 @@
 const { PromptTemplate } = require('langchain/prompts')
 const { LLMChain } = require('langchain/chains')
 const { AIModelManager } = require('./aiModelManager')
+const { SQLQueryService } = require('./sqlQueryService')
 
 class ChatService {
   constructor(vectorStore) {
     this.vectorStore = vectorStore
     this.aiManager = new AIModelManager()
     this.llm = this.aiManager.getLLM()
+    this.sqlQueryService = new SQLQueryService()
     
     this.setupPrompts()
   }
@@ -69,11 +71,36 @@ class ChatService {
 
 请用中文回答，要准确、有用且友好。如果问题超出了你的知识范围，请礼貌地说明。`
     })
+
+    // 数据库查询意图识别提示模板
+    this.dbIntentPrompt = new PromptTemplate({
+      inputVariables: ['question'],
+      template: `请判断用户的问题是否涉及数据库查询。
+
+用户问题：{question}
+
+请分析问题是否包含以下特征：
+1. 查询数据（如"查询"、"统计"、"显示"、"查找"等）
+2. 涉及表格、记录、数据等概念
+3. 要求分析、报告、汇总等
+
+如果问题涉及数据库查询，请回答"YES"，否则回答"NO"。
+
+判断结果：`
+    })
   }
 
   async generateResponse(question, chatHistory = []) {
     try {
-      // 首先尝试从向量存储中检索相关文档
+      // 首先检查是否是数据库查询意图
+      const isDbQuery = await this.checkDatabaseIntent(question)
+      
+      if (isDbQuery) {
+        // 使用数据库查询服务
+        return await this.generateDatabaseResponse(question, chatHistory)
+      }
+
+      // 然后尝试从向量存储中检索相关文档
       const relevantDocs = await this.vectorStore.similaritySearch(question, 5)
       
       if (relevantDocs.length > 0) {
@@ -213,6 +240,98 @@ class ChatService {
     } catch (error) {
       console.error('按类型搜索失败:', error)
       return []
+    }
+  }
+
+  // 检查是否是数据库查询意图
+  async checkDatabaseIntent(question) {
+    try {
+      const intentChain = new LLMChain({
+        llm: this.llm,
+        prompt: this.dbIntentPrompt
+      })
+
+      const response = await intentChain.call({ question })
+      const result = response.text.trim().toUpperCase()
+      
+      return result.includes('YES')
+    } catch (error) {
+      console.error('数据库意图识别失败:', error)
+      return false
+    }
+  }
+
+  // 生成数据库查询响应
+  async generateDatabaseResponse(question, chatHistory = []) {
+    try {
+      console.log('🔍 检测到数据库查询意图:', question)
+      
+      // 执行数据库查询
+      const queryResult = await this.sqlQueryService.executeQuery(question)
+      
+      if (queryResult.success) {
+        // 构建成功响应
+        let response = `📊 **查询结果**\n\n`
+        response += `**执行的 SQL：**\n\`\`\`sql\n${queryResult.sql}\n\`\`\`\n\n`
+        response += `**查询结果（共 ${queryResult.rowCount} 条记录）：**\n\n`
+        
+        // 显示前几条结果
+        if (queryResult.results.length > 0) {
+          const displayResults = queryResult.results.slice(0, 5)
+          response += `\`\`\`json\n${JSON.stringify(displayResults, null, 2)}\n\`\`\`\n\n`
+          
+          if (queryResult.results.length > 5) {
+            response += `*（显示前5条结果，共${queryResult.rowCount}条）*\n\n`
+          }
+        } else {
+          response += `*查询结果为空*\n\n`
+        }
+        
+        response += `**分析报告：**\n${queryResult.explanation}`
+        
+        return response
+      } else {
+        // 构建错误响应
+        let response = `❌ **查询执行失败**\n\n`
+        response += `**错误信息：** ${queryResult.error}\n\n`
+        response += `**解决方案：**\n${queryResult.explanation}`
+        
+        return response
+      }
+    } catch (error) {
+      console.error('数据库查询响应生成失败:', error)
+      return `❌ 数据库查询失败：${error.message}\n\n请检查问题描述或联系管理员。`
+    }
+  }
+
+  // 获取数据库概览
+  async getDatabaseOverview() {
+    try {
+      return await this.sqlQueryService.getDatabaseOverview()
+    } catch (error) {
+      console.error('获取数据库概览失败:', error)
+      throw error
+    }
+  }
+
+  // 初始化数据库服务
+  async initializeDatabaseService() {
+    try {
+      await this.sqlQueryService.initialize()
+      console.log('✅ 数据库查询服务初始化完成')
+    } catch (error) {
+      console.error('❌ 数据库查询服务初始化失败:', error.message)
+      throw error
+    }
+  }
+
+  // 关闭服务
+  async close() {
+    try {
+      await this.sqlQueryService.close()
+      console.log('✅ 聊天服务已关闭')
+    } catch (error) {
+      console.error('❌ 关闭聊天服务失败:', error.message)
     }
   }
 }
