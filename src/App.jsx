@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Send, Upload, X, Bot, User } from 'lucide-react'
+import { Send, Upload, X, Bot, User, Settings } from 'lucide-react'
+import FileManager from './components/FileManager'
 
 const App = () => {
   const [messages, setMessages] = useState([
@@ -13,6 +14,7 @@ const App = () => {
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [uploadedFiles, setUploadedFiles] = useState([])
+  const [showFileManager, setShowFileManager] = useState(false)
   const messagesEndRef = useRef(null)
   const fileInputRef = useRef(null)
 
@@ -127,11 +129,35 @@ const App = () => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
   }
 
+  if (showFileManager) {
+    return (
+      <div className="app">
+        <div className="header">
+          <h1>📁 文件管理</h1>
+          <button 
+            onClick={() => setShowFileManager(false)}
+            className="back-btn"
+          >
+            ← 返回聊天
+          </button>
+        </div>
+        <FileManager />
+      </div>
+    )
+  }
+
   return (
     <div className="app">
       <div className="header">
         <h1>🤖 智能问答系统</h1>
         <p>基于 LangChain.js 的 RAG 架构文档问答助手</p>
+        <button 
+          onClick={() => setShowFileManager(true)}
+          className="file-manager-btn"
+        >
+          <Settings size={16} />
+          文件管理
+        </button>
       </div>
 
       <div className="chat-container">
