@@ -1,0 +1,245 @@
+{
+  "documents": [
+    {
+      "pageContent": "页面标题和导航\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 做市列表 | - | 返回按钮 |\n| 保存配置 | - | 保存按钮 |\n| 下线 | - | 状态按钮 |\n| 启动 | - | 状态按钮 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 2,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.825Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 7
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "交易对信息卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 交易对信息 | - | 卡片标题 |\n| 主策略开关 | IsMasterAccountEnable | 开关 |\n| 币对名称 | SymbolDbId | 选择框 |\n| 添加 | - | 添加按钮 |\n| 做市账户 | AccountDbId | 选择框 |\n| 策略组 | group_id | 选择框 |\n| 策略名称 | StrategyName | 输入框 |\n| 近盘口最低下单间隔时间 | NearPlaceOrderWaitTime | 输入框 |\n| 远盘口最低下单间隔时间 | FarPlaceOrderWaitTime | 输入框 |\n| 外盘账户 | HedgeAccount | 选择框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 3,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.825Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 13
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "KLine卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 成交间隔 | KlinePlaceOrderTime | 输入框 |\n| 秒 | - | 单位后缀 |\n| 防插针偏离 | TradePriceDiff | 输入框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 4,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.825Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 6
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "成交量卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 成交量 | - | 卡片标题 |\n| 市占率 | SelfVolumeMarketReq | 输入框 |\n| 成交频率 | SelfVolumeInterval | 输入框 |\n| 最小下单量 | SelfMinOrderAmount | 输入框 |\n| 最大下单量 | SelfMaxOrderAmount | 输入框 |\n| 高级设置 | - | 展开面板标题 |\n| 最大下单金额 | SelfMaxVolumeLimit | 输入框 |\n| 下单笔数 | SelfKlineOrderCount | 输入框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 5,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.825Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 11
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "深度摆盘:参考上游卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 深度摆盘:参考上游 | - | 卡片标题 |\n| 下单量模式 | OrderNearTickSizeDepths.PlaceType | 选择框 |\n| 最小档位 | OrderNearTickSizeDepths.MinDepthN | 输入框 |\n| 层 | - | 单位后缀 |\n| 最大档位 | OrderNearTickSizeDepths.MaxDepthN | 输入框 |\n| 参考比例 | OrderNearTickSizeDepths.MutiDepthThr | 输入框 |\n| 下单金额 | OrderNearTickSizeDepths.OrderVolumeReq | 输入框 |\n| 挂单笔数 | OrderNearTickSizeDepths.OrderCount | 输入框 |\n| 下单量随机下限 | OrderAmountRatio | 输入框 |\n| 最小挂单深度 | OrderNearTickSizeDepths.MinCancelVolumeReq | 输入框 |\n| 最大撤单深度 | OrderNearTickSizeDepths.MaxCancelVolumeReq | 输入框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 6,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.825Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 14
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "深度摆盘:盘口下单卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 深度摆盘:盘口下单 | - | 卡片标题 |\n| 档 | - | 档位标识 |\n| 最小深度 | MinDepth | 输入框 |\n| 最大深度 | MaxDepth | 输入框 |\n| 买卖盘 | OrderbookType | 选择框 |\n| 下单笔数 | PlaceOrderCount | 输入框 |\n| 挂单金额 | OrderVolumeReq | 输入框 |\n| 买盘金额 | OrderBuyVolumeReq | 输入框 |\n| 卖盘金额 | OrderSellVolumeReq | 输入框 |\n| 高级设置 | - | 展开面板标题 |\n| 参考上游比例 | MutiDepthThr | 输入框 |\n| 撤单阈值 | OrderVolumeReqThr | 输入框 |\n| 下单模式 | PlaceOrderType | 选择框 |\n| 添加新档位 | - | 添加按钮 |\n| 最多可配置 | - | 提示文本 |\n| 个档位 | - | 提示文本 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 7,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 19
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "策略高级设置\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 策略高级设置 | - | 标题 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 8,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 4
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "撤单卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 撤单 | - | 卡片标题 |\n| 订单管理 | - | 标签 |\n| 配置订单撤销策略，包括时间、价格和数量等条件 | - | 描述文本 |\n| 近盘口按时间撤单 | CancelNearOrderTimeEnable | 开关 |\n| 远盘口按时间撤单 | CancelFarOrderTimeEnable | 开关 |\n| 按价格撤单 | CancelPriceOrderEnable | 开关 |\n| 按订单量撤单 | CancelVolumeOrderEnable | 开关 |\n| 盘口订单撤单时间 | CancelOrderCancelTime | 输入框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 9,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 11
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "下单卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 下单 | - | 卡片标题 |\n| 订单执行 | - | 标签 |\n| 设置订单类型和批量下单参数，优化订单执行策略 | - | 描述文本 |\n| 下单类型 | OrderType | 选择框 |\n| 批量下单笔数 | BatchPlaceOrderCount | 输入框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 10,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 8
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "平仓单卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 平仓单 | - | 卡片标题 |\n| 仓位管理 | - | 标签 |\n| 配置仓位平衡和风险控制参数，自动管理持仓风险 | - | 描述文本 |\n| 处理频率 | RebalanceTaskTime | 输入框 |\n| 最大下单量 | RebalanceMaxOrderQty | 输入框 |\n| 滑点阈值 | RebalancePriceDiff | 输入框 |\n| 仓位阈值 | PositionCloseAmountThr | 输入框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 11,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 10
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "跨市场卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 跨市场 | - | 卡片标题 |\n| 套利交易 | - | 标签 |\n| 设置跨市场套利参数，实现不同市场间的价差交易 | - | 描述文本 |\n| 跨市场处理频率 | CrossInterval | 输入框 |\n| 跨市场下单量比例 | RatioCross | 输入框 |\n| 跨市场百分比阈值 | CrossPnl | 输入框 |\n| 跨市场tick阈值 | ArbitrageShiftTickThr | 输入框 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 12,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 10
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "价格劣势卡片\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 价格劣势 | - | 卡片标题 |\n| 风险控制 | - | 标签 |\n| 监控价格劣势情况，设置风险控制阈值和应对策略 | - | 描述文本 |\n| 价格劣势功能配置 | - | 占位文本 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 13,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 7
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "选择框选项\n| 中文文本 | 字段Key | 选项值 |\n|---------|---------|--------|\n| 不区分 | OrderbookType | 1 |\n| 区分 | OrderbookType | 2 |\n| 下单量 | PlaceOrderType | 0 |\n| 下单额 | PlaceOrderType | 1 |\n| 下单笔数 | PlaceOrderType | 2 |\n| 参考上游 | PlaceType | 0 |\n| 自定义 | PlaceType | 1 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 14,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 10
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "验证消息\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 不能为空 | - | 验证消息 |\n| 请输入 | - | 输入框占位符 |\n| 请选择 | - | 选择框占位符 |\n| 请填写 | - | 验证消息 |\n| 请完善盘口下单档位设置 | - | 验证消息 |\n| 必须大于最小下单深度 | MaxDepth | 验证消息 |\n| 必须大于等于上一档的最大下单深度 | MinDepth | 验证消息 |\n| 盘口下单配置有误，请检查 | - | 验证消息 |\n| 操作成功 | - | 成功消息 |\n| 只能输入1-1000之间的数字 | ArbitrageShiftTickThr | 验证消息 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 15,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 13
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "单位后缀\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| MS | NearPlaceOrderWaitTime, FarPlaceOrderWaitTime, SelfVolumeInterval | 时间单位 |\n| % | TradePriceDiff, SelfVolumeMarketReq, MutiDepthThr, OrderVolumeReqThr, MinCancelVolumeReq, MaxCancelVolumeReq, RebalancePriceDiff, MinDepth, MaxDepth, RatioCross, OrderAmountRatio | 百分比单位 |\n| 秒 | KlinePlaceOrderTime, CancelOrderCancelTime | 时间单位 |\n| S | RebalanceTaskTime, CrossInterval | 时间单位 |\n| 层 | MinDepthN, MaxDepthN | 档位单位 |\n| USDT/USDC | OrderVolumeReq, OrderBuyVolumeReq, OrderSellVolumeReq, RebalanceMaxOrderQty, PositionCloseAmountThr | 货币单位 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 16,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 9
+          }
+        }
+      }
+    },
+    {
+      "pageContent": "页面元数据\n| 中文文本 | 字段Key | 位置 |\n|---------|---------|------|\n| 策略 | - | 页面标题 |",
+      "metadata": {
+        "source": "strategy-edit-i18n-keys.md",
+        "page": 17,
+        "type": "document",
+        "timestamp": "2025-10-21T11:17:37.826Z",
+        "loc": {
+          "lines": {
+            "from": 1,
+            "to": 4
+          }
+        }
+      }
+    }
+  ],
+  "timestamp": "2025-10-21T11:17:37.828Z"
+}
