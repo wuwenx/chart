@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Send, Upload, X, Bot, User, Settings, Database, FileText } from 'lucide-react'
+import { Send, Upload, X, Bot, User, Settings, Database, FileText, Monitor } from 'lucide-react'
 import FileManager from './components/FileManager'
 import DatabaseChat from './components/DatabaseChat'
+import JenkinsMonitor from './components/JenkinsMonitor'
 
 const App = () => {
   const [messages, setMessages] = useState([
@@ -16,7 +17,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [uploadedFiles, setUploadedFiles] = useState([])
   const [showFileManager, setShowFileManager] = useState(false)
-  const [activeTab, setActiveTab] = useState('document') // 'document' 或 'database'
+  const [activeTab, setActiveTab] = useState('document') // 'document', 'database', 'jenkins'
   const messagesEndRef = useRef(null)
   const fileInputRef = useRef(null)
 
@@ -178,6 +179,13 @@ const App = () => {
             <Database size={16} />
             数据库查询
           </button>
+          <button 
+            className={`tab-btn ${activeTab === 'jenkins' ? 'active' : ''}`}
+            onClick={() => setActiveTab('jenkins')}
+          >
+            <Monitor size={16} />
+            Jenkins监控
+          </button>
         </div>
 
         <div className="tab-content">
@@ -283,8 +291,10 @@ const App = () => {
                 </div>
               </div>
             </div>
-          ) : (
+          ) : activeTab === 'database' ? (
             <DatabaseChat />
+          ) : (
+            <JenkinsMonitor />
           )}
         </div>
       </div>

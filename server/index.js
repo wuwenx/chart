@@ -11,6 +11,9 @@ const { ChatService } = require('./services/chatService')
 const { DocumentChatService } = require('./services/documentChatService')
 const { CodeAnalyzer } = require('./services/codeAnalyzer')
 const { AIModelManager } = require('./services/aiModelManager')
+const JenkinsService = require('./services/jenkinsService')
+const FeishuService = require('./services/feishuService')
+const { JenkinsAgent } = require('./services/jenkinsAgent')
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -60,6 +63,7 @@ const upload = multer({
 
 // 初始化服务
 let documentProcessor, vectorStore, chatService, documentChatService, codeAnalyzer, aiModelManager
+let jenkinsService, feishuService, jenkinsAgent
 
 const initializeServices = async () => {
   try {
@@ -69,9 +73,18 @@ const initializeServices = async () => {
     chatService = new ChatService(vectorStore)
     documentChatService = new DocumentChatService(vectorStore)
     codeAnalyzer = new CodeAnalyzer()
+    jenkinsService = new JenkinsService()
+    feishuService = new FeishuService()
+    jenkinsAgent = new JenkinsAgent()
+    
+    // 连接服务
+    jenkinsService.setExternalServices(feishuService, jenkinsAgent)
     
     console.log('✅ 服务初始化完成')
     console.log(`🤖 当前 AI 模型: ${aiModelManager.getProvider()}`)
+    console.log('🔧 Jenkins监控服务已启动')
+    console.log('📱 飞书通知服务已启动')
+    console.log('🧠 Jenkins AI Agent已启动')
   } catch (error) {
     console.error('❌ 服务初始化失败:', error)
   }
@@ -454,6 +467,228 @@ app.post('/api/telegram/test', async (req, res) => {
   }
 })
 
+// Jenkins 监控相关 API
+
+// 获取Jenkins配置
+app.get('/api/jenkins/config', (req, res) => {
+  try {
+    if (!jenkinsService) {
+      return res.status(500).json({ error: 'Jenkins服务未初始化' })
+    }
+    
+    const config = jenkinsService.getMonitoringStatus().config
+    res.json(config)
+  } catch (error) {
+    console.error('获取Jenkins配置错误:', error)
+    res.status(500).json({ error: '获取Jenkins配置失败' })
+  }
+})
+
+// 保存Jenkins配置
+app.post('/api/jenkins/config', async (req, res) => {
+  try {
+    if (!jenkinsService) {
+      return res.status(500).json({ error: 'Jenkins服务未初始化' })
+    }
+    
+    const { url, username, token, jobName } = req.body
+    
+    if (!url || !username || !token || !jobName) {
+      return res.status(400).json({ error: '配置参数不完整' })
+    }
+    
+    jenkinsService.updateConfig({ url, username, token, jobName })
+    
+    res.json({ 
+      success: true,
+      message: 'Jenkins配置保存成功'
+    })
+  } catch (error) {
+    console.error('保存Jenkins配置错误:', error)
+    res.status(500).json({ error: '保存Jenkins配置失败' })
+  }
+})
+
+// 测试Jenkins连接
+app.post('/api/jenkins/test', async (req, res) => {
+  try {
+    if (!jenkinsService) {
+      return res.status(500).json({ error: 'Jenkins服务未初始化' })
+    }
+    
+    const result = await jenkinsService.testConnection(req.body)
+    res.json(result)
+  } catch (error) {
+    console.error('Jenkins连接测试错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: 'Jenkins连接测试失败',
+      message: error.message
+    })
+  }
+})
+
+// 获取监控日志
+app.get('/api/jenkins/logs', (req, res) => {
+  try {
+    if (!jenkinsService) {
+      return res.status(500).json({ error: 'Jenkins服务未初始化' })
+    }
+    
+    const status = jenkinsService.getMonitoringStatus()
+    res.json({
+      logs: status.logs,
+      lastBuildInfo: status.lastBuildInfo,
+      buildStatus: status.buildStatus,
+      isMonitoring: status.isMonitoring
+    })
+  } catch (error) {
+    console.error('获取Jenkins日志错误:', error)
+    res.status(500).json({ error: '获取Jenkins日志失败' })
+  }
+})
+
+// 开始监控
+app.post('/api/jenkins/monitor/start', (req, res) => {
+  try {
+    if (!jenkinsService) {
+      return res.status(500).json({ error: 'Jenkins服务未初始化' })
+    }
+    
+    const result = jenkinsService.startMonitoring()
+    res.json(result)
+  } catch (error) {
+    console.error('启动Jenkins监控错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '启动Jenkins监控失败',
+      message: error.message
+    })
+  }
+})
+
+// 停止监控
+app.post('/api/jenkins/monitor/stop', (req, res) => {
+  try {
+    if (!jenkinsService) {
+      return res.status(500).json({ error: 'Jenkins服务未初始化' })
+    }
+    
+    const result = jenkinsService.stopMonitoring()
+    res.json(result)
+  } catch (error) {
+    console.error('停止Jenkins监控错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '停止Jenkins监控失败',
+      message: error.message
+    })
+  }
+})
+
+// 触发构建
+app.post('/api/jenkins/build/trigger', async (req, res) => {
+  try {
+    if (!jenkinsService) {
+      return res.status(500).json({ error: 'Jenkins服务未初始化' })
+    }
+    
+    const result = await jenkinsService.triggerBuild()
+    res.json(result)
+  } catch (error) {
+    console.error('触发Jenkins构建错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '触发Jenkins构建失败',
+      message: error.message
+    })
+  }
+})
+
+// 飞书通知相关 API
+
+// 获取飞书配置
+app.get('/api/feishu/config', (req, res) => {
+  try {
+    if (!feishuService) {
+      return res.status(500).json({ error: '飞书服务未初始化' })
+    }
+    
+    const config = feishuService.getConfig()
+    res.json(config)
+  } catch (error) {
+    console.error('获取飞书配置错误:', error)
+    res.status(500).json({ error: '获取飞书配置失败' })
+  }
+})
+
+// 保存飞书配置
+app.post('/api/feishu/config', async (req, res) => {
+  try {
+    if (!feishuService) {
+      return res.status(500).json({ error: '飞书服务未初始化' })
+    }
+    
+    const { webhookUrl, secret } = req.body
+    
+    if (!webhookUrl) {
+      return res.status(400).json({ error: 'Webhook URL不能为空' })
+    }
+    
+    feishuService.updateConfig({ webhookUrl, secret })
+    
+    res.json({ 
+      success: true,
+      message: '飞书配置保存成功'
+    })
+  } catch (error) {
+    console.error('保存飞书配置错误:', error)
+    res.status(500).json({ error: '保存飞书配置失败' })
+  }
+})
+
+// 测试飞书连接
+app.post('/api/feishu/test', async (req, res) => {
+  try {
+    if (!feishuService) {
+      return res.status(500).json({ error: '飞书服务未初始化' })
+    }
+    
+    const result = await feishuService.testConnection(req.body)
+    res.json(result)
+  } catch (error) {
+    console.error('飞书连接测试错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '飞书连接测试失败',
+      message: error.message
+    })
+  }
+})
+
+// 发送测试通知
+app.post('/api/feishu/send-test', async (req, res) => {
+  try {
+    if (!feishuService) {
+      return res.status(500).json({ error: '飞书服务未初始化' })
+    }
+    
+    const { message, title } = req.body
+    const result = await feishuService.sendTextMessage(
+      message || '这是一条测试消息',
+      title || 'Jenkins监控测试'
+    )
+    res.json(result)
+  } catch (error) {
+    console.error('发送飞书测试消息错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '发送飞书测试消息失败',
+      message: error.message
+    })
+  }
+})
+
 // 健康检查
 app.get('/api/health', (req, res) => {
   res.json({ 
@@ -465,7 +700,10 @@ app.get('/api/health', (req, res) => {
       chatService: !!chatService,
       codeAnalyzer: !!codeAnalyzer,
       aiModelManager: !!aiModelManager,
-      databaseService: !!chatService?.sqlQueryService
+      databaseService: !!chatService?.sqlQueryService,
+      jenkinsService: !!jenkinsService,
+      feishuService: !!feishuService,
+      jenkinsAgent: !!jenkinsAgent
     },
     aiModel: aiModelManager ? aiModelManager.getModelInfo() : null
   })

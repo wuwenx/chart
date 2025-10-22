@@ -939,3 +939,363 @@ body {
   margin-bottom: 10px;
   font-size: 14px;
 }
+
+/* Jenkins 监控样式 */
+.jenkins-monitor {
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.monitor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.monitor-header h2 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.monitor-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-btn.start {
+  background: #4CAF50;
+  color: white;
+}
+
+.control-btn.stop {
+  background: #f44336;
+  color: white;
+}
+
+.control-btn.trigger {
+  background: #2196F3;
+  color: white;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.control-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.monitor-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.config-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.config-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.config-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.config-header h3 {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.jenkins-config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.jenkins-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.jenkins-form-group label {
+  font-weight: 500;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.jenkins-form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.jenkins-form-group input:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.jenkins-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.jenkins-save-btn, .jenkins-test-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.jenkins-save-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.jenkins-test-btn {
+  background: #FF9800;
+  color: white;
+}
+
+.jenkins-save-btn:hover, .jenkins-test-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.status-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.status-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.status-header h3 {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.status-icon.success {
+  color: #4CAF50;
+}
+
+.status-icon.failure {
+  color: #f44336;
+}
+
+.status-icon.building {
+  color: #FF9800;
+}
+
+.status-icon.idle {
+  color: #9E9E9E;
+}
+
+.status-text {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.status-text.success {
+  color: #4CAF50;
+}
+
+.status-text.failure {
+  color: #f44336;
+}
+
+.status-text.building {
+  color: #FF9800;
+}
+
+.status-text.idle {
+  color: #9E9E9E;
+}
+
+.build-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.info-item {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.info-item strong {
+  color: #333;
+}
+
+.logs-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  flex: 1;
+}
+
+.logs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logs-header h3 {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: #1976D2;
+  transform: translateY(-1px);
+}
+
+.logs-content {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.no-logs {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 20px;
+}
+
+.log-item {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border-left: 4px solid #ddd;
+}
+
+.log-item.info {
+  background: #e3f2fd;
+  border-left-color: #2196F3;
+}
+
+.log-item.warn {
+  background: #fff3e0;
+  border-left-color: #FF9800;
+}
+
+.log-item.error {
+  background: #ffebee;
+  border-left-color: #f44336;
+}
+
+.log-item.debug {
+  background: #f3e5f5;
+  border-left-color: #9C27B0;
+}
+
+.log-timestamp {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.log-message {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.log-details {
+  font-size: 0.8rem;
+  color: #666;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  word-break: break-all;
+}

@@ -14,10 +14,10 @@ class CodeAnalyzer {
     // 代码质量分析提示
     this.qualityAnalysisPrompt = new PromptTemplate({
       inputVariables: ['code', 'language'],
-      template: `作为代码质量分析师，请分析以下${language}代码的质量：
+      template: `作为代码质量分析师，请分析以下{language}代码的质量：
 
 代码：
-\`\`\`${language}
+\`\`\`{language}
 {code}
 \`\`\`
 
@@ -35,10 +35,10 @@ class CodeAnalyzer {
     // 代码功能分析提示
     this.functionalityAnalysisPrompt = new PromptTemplate({
       inputVariables: ['code', 'language'],
-      template: `作为代码功能分析师，请分析以下${language}代码的功能：
+      template: `作为代码功能分析师，请分析以下{language}代码的功能：
 
 代码：
-\`\`\`${language}
+\`\`\`{language}
 {code}
 \`\`\`
 
@@ -56,10 +56,10 @@ class CodeAnalyzer {
     // 代码重构建议提示
     this.refactorPrompt = new PromptTemplate({
       inputVariables: ['code', 'language', 'issues'],
-      template: `作为代码重构专家，请为以下${language}代码提供重构建议：
+      template: `作为代码重构专家，请为以下{language}代码提供重构建议：
 
 代码：
-\`\`\`${language}
+\`\`\`{language}
 {code}
 \`\`\`
 
@@ -79,10 +79,10 @@ class CodeAnalyzer {
     // 代码解释提示
     this.explainPrompt = new PromptTemplate({
       inputVariables: ['code', 'language'],
-      template: `请用简单易懂的方式解释以下${language}代码：
+      template: `请用简单易懂的方式解释以下{language}代码：
 
 代码：
-\`\`\`${language}
+\`\`\`{language}
 {code}
 \`\`\`
 
