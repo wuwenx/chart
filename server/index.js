@@ -8,6 +8,7 @@ require('dotenv').config()
 const { DocumentProcessor } = require('./services/documentProcessor')
 const { VectorStore } = require('./services/vectorStore')
 const { ChatService } = require('./services/chatService')
+const { DocumentChatService } = require('./services/documentChatService')
 const { CodeAnalyzer } = require('./services/codeAnalyzer')
 const { AIModelManager } = require('./services/aiModelManager')
 
@@ -58,7 +59,7 @@ const upload = multer({
 })
 
 // 初始化服务
-let documentProcessor, vectorStore, chatService, codeAnalyzer, aiModelManager
+let documentProcessor, vectorStore, chatService, documentChatService, codeAnalyzer, aiModelManager
 
 const initializeServices = async () => {
   try {
@@ -66,6 +67,7 @@ const initializeServices = async () => {
     documentProcessor = new DocumentProcessor()
     vectorStore = new VectorStore()
     chatService = new ChatService(vectorStore)
+    documentChatService = new DocumentChatService(vectorStore)
     codeAnalyzer = new CodeAnalyzer()
     
     console.log('✅ 服务初始化完成')
@@ -177,6 +179,24 @@ app.post('/api/chat', async (req, res) => {
     res.json({ response })
   } catch (error) {
     console.error('聊天处理错误:', error)
+    res.status(500).json({ error: '生成回答失败' })
+  }
+})
+
+// 文档问答接口（独立，不包含数据库查询功能）
+app.post('/api/document-chat', async (req, res) => {
+  try {
+    const { message, history } = req.body
+    
+    if (!message || !message.trim()) {
+      return res.status(400).json({ error: '消息不能为空' })
+    }
+
+    const response = await documentChatService.generateResponse(message, history)
+    
+    res.json({ response })
+  } catch (error) {
+    console.error('文档聊天处理错误:', error)
     res.status(500).json({ error: '生成回答失败' })
   }
 })

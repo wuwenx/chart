@@ -92,13 +92,13 @@ const App = () => {
     setIsLoading(true)
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch('/api/document-chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          question,
+          message: question,
           history: messages.slice(-10) // 只发送最近10条消息作为上下文
         })
       })

@@ -8,7 +8,7 @@ class DatabaseService {
       port: 3306,
       user: 'admin',
       password: '0YvoGUzwhumnf2KGQvjN',
-      database: 'bb_server', // 默认数据库，可以根据需要修改
+      database: 'mm_admin_manage', // 默认数据库，可以根据需要修改
       charset: 'utf8mb4',
       timezone: '+08:00',
       acquireTimeout: 60000,
