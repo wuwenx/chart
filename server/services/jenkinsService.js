@@ -390,8 +390,8 @@ class JenkinsService {
         console.log('使用CSRF Token进行请求')
       }
       
-      // Jenkins需要空的表单数据
-      const response = await axios.post(buildUrl, '', {
+      // Jenkins需要空的请求体
+      const response = await axios.post(buildUrl, {}, {
         headers: headers,
         timeout: 10000,
         validateStatus: function (status) {
@@ -410,6 +410,22 @@ class JenkinsService {
       
       if (response.status === 403) {
         throw new Error('没有权限触发构建')
+      }
+      
+       if (response.status === 400) {
+        // 400通常表示请求格式问题，可能是CSRF Token或参数问题
+        const errorMsg = response.data?.message || '请求格式错误'
+        
+        // 检查是否是"No changes"或"Nothing is submitted"的情况
+        if (errorMsg.includes('Nothing is submitted') || errorMsg.includes('No changes')) {
+          throw new Error('没有新的代码提交，Jenkins拒绝触发构建。请先提交代码变更。')
+        }
+        
+        throw new Error(`触发构建失败: ${errorMsg}`)
+      }
+      
+      if (response.status !== 200 && response.status !== 201) {
+        throw new Error(`触发构建失败，状态码: ${response.status}`)
       }
       
       this.addLog('info', `触发构建: ${job}`, `状态码: ${response.status}`)

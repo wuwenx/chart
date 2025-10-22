@@ -65,6 +65,7 @@ const JenkinsMonitor = () => {
         setLogs(data.logs || [])
         setLastBuildInfo(data.lastBuildInfo)
         setBuildStatus(data.buildStatus || 'idle')
+        setIsMonitoring(data.isMonitoring || false)
       }
     } catch (error) {
       console.error('获取日志失败:', error)
