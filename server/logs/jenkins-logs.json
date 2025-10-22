@@ -1,52 +1,604 @@
 {
   "logs": [
     {
-      "timestamp": "2025-10-22T05:14:33.000Z",
+      "timestamp": "2025-10-22T06:42:35.766Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T05:14:33.000Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:42:35.766Z\"}"
     },
     {
-      "timestamp": "2025-10-22T05:14:33.000Z",
+      "timestamp": "2025-10-22T06:42:35.766Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T05:14:32.999Z",
+      "timestamp": "2025-10-22T06:42:35.766Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T05:14:02.830Z",
+      "timestamp": "2025-10-22T06:42:29.944Z",
       "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T05:14:02.830Z\"}"
+      "message": "触发构建: test/web/web-mm-admin-new",
+      "details": "状态码: 400"
     },
     {
-      "timestamp": "2025-10-22T05:14:02.830Z",
+      "timestamp": "2025-10-22T06:42:06.270Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:42:06.269Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:42:06.269Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T05:14:02.829Z",
+      "timestamp": "2025-10-22T06:42:06.269Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T05:13:30.956Z",
+      "timestamp": "2025-10-22T06:41:36.021Z",
       "level": "info",
-      "message": "开始监控Jenkins构建",
-      "details": "任务: test/web/web-mm-admin-new"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:41:36.019Z\"}"
     },
     {
-      "timestamp": "2025-10-22T05:13:25.800Z",
-      "level": "info",
-      "message": "Jenkins配置已更新",
+      "timestamp": "2025-10-22T06:41:36.019Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T06:41:36.018Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
       "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:41:06.628Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:41:06.628Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:41:06.628Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T06:41:06.627Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:40:44.158Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:40:44.158Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:40:44.157Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:40:44.156Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:40:14.159Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:40:14.159Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:40:14.159Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:40:14.157Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:39:44.156Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:39:44.156Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:39:44.155Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:39:44.153Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:39:14.154Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:39:14.154Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:39:14.153Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:39:14.152Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:38:44.152Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:38:44.152Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:38:44.151Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:38:44.150Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:38:14.151Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:38:14.151Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:38:14.150Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:38:14.149Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:37:44.149Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:37:44.149Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:37:44.148Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:37:44.148Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:37:14.147Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:37:14.147Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:37:14.146Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:37:14.144Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:36:44.147Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:36:44.147Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:36:44.146Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:36:44.144Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:36:14.143Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:36:14.143Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:36:14.142Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:36:14.141Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:35:44.140Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:35:44.140Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:35:44.139Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:35:44.139Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:35:14.142Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:35:14.142Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:35:14.142Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:35:14.140Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:34:44.138Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:34:44.138Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:34:44.137Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:34:44.135Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:34:14.139Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:34:14.139Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:34:14.138Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:34:14.136Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:33:44.137Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:33:44.137Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:33:44.136Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:33:44.134Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:33:14.133Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:33:14.133Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:33:14.132Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:33:14.132Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:32:44.132Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:32:44.132Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:32:44.131Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:32:44.129Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:32:14.128Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:32:14.128Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:32:14.128Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:32:14.127Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:31:44.130Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:31:44.130Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:31:44.129Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:31:44.127Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:31:14.127Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:31:14.127Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:31:14.126Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:31:14.126Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:30:44.127Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:30:44.127Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:30:44.127Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:30:44.125Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:30:14.127Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:30:14.127Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:30:14.126Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:30:14.124Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:29:44.123Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:29:44.123Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:29:44.122Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:29:44.121Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:29:14.122Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:29:14.122Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:29:14.121Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:29:14.120Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:28:44.117Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:28:44.117Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:28:44.116Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:28:44.115Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:28:14.117Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:28:14.117Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:28:14.117Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:28:14.115Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:27:44.117Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:27:44.117Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:27:44.116Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:27:44.114Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:27:14.109Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:27:14.109Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:27:14.109Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:27:14.107Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
+    },
+    {
+      "timestamp": "2025-10-22T06:26:44.111Z",
+      "level": "info",
+      "message": "AI决策: ℹ️ 构建状态：error",
+      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:26:44.111Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T06:26:44.110Z",
+      "level": "debug",
+      "message": "构建状态检查: error",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T06:26:44.109Z",
+      "level": "error",
+      "message": "检查构建状态失败",
+      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
     }
   ],
   "lastBuildInfo": {
@@ -65,5 +617,5 @@
     }
   },
   "buildStatus": "success",
-  "lastUpdated": "2025-10-22T05:14:33.000Z"
+  "lastUpdated": "2025-10-22T06:42:35.766Z"
 }
