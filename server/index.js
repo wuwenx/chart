@@ -13,7 +13,9 @@ const { CodeAnalyzer } = require('./services/codeAnalyzer')
 const { AIModelManager } = require('./services/aiModelManager')
 const JenkinsService = require('./services/jenkinsService')
 const FeishuService = require('./services/feishuService')
-const { JenkinsAgent } = require('./services/jenkinsAgent')
+const JenkinsAgent = require('./services/jenkinsAgent')
+const CICDManager = require('./services/cicdManager')
+const GitWebhookService = require('./services/gitWebhookService')
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -63,7 +65,7 @@ const upload = multer({
 
 // 初始化服务
 let documentProcessor, vectorStore, chatService, documentChatService, codeAnalyzer, aiModelManager
-let jenkinsService, feishuService, jenkinsAgent
+let jenkinsService, feishuService, jenkinsAgent, cicdManager, gitWebhookService
 
 const initializeServices = async () => {
   try {
@@ -76,6 +78,8 @@ const initializeServices = async () => {
     jenkinsService = new JenkinsService()
     feishuService = new FeishuService()
     jenkinsAgent = new JenkinsAgent()
+    cicdManager = new CICDManager()
+    gitWebhookService = new GitWebhookService()
     
     // 连接服务
     jenkinsService.setExternalServices(feishuService, jenkinsAgent)
@@ -707,6 +711,87 @@ app.get('/api/health', (req, res) => {
     },
     aiModel: aiModelManager ? aiModelManager.getModelInfo() : null
   })
+})
+
+// CI/CD 相关 API
+
+// GitLab Webhook 端点
+app.post('/api/webhook/gitlab', async (req, res) => {
+  try {
+    if (!cicdManager) {
+      return res.status(500).json({ error: 'CI/CD管理器未初始化' })
+    }
+    
+    const result = await cicdManager.handleCICDProcess(req.body)
+    res.json(result)
+  } catch (error) {
+    console.error('处理GitLab webhook失败:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '处理GitLab webhook失败',
+      message: error.message
+    })
+  }
+})
+
+// 手动触发CI/CD流程
+app.post('/api/cicd/trigger', async (req, res) => {
+  try {
+    if (!cicdManager) {
+      return res.status(500).json({ error: 'CI/CD管理器未初始化' })
+    }
+    
+    const result = await cicdManager.triggerManualBuild()
+    res.json(result)
+  } catch (error) {
+    console.error('手动触发CI/CD失败:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '手动触发CI/CD失败',
+      message: error.message
+    })
+  }
+})
+
+// 获取CI/CD状态
+app.get('/api/cicd/status', (req, res) => {
+  try {
+    if (!cicdManager) {
+      return res.status(500).json({ error: 'CI/CD管理器未初始化' })
+    }
+    
+    const status = cicdManager.getStatus()
+    res.json({
+      success: true,
+      status: status
+    })
+  } catch (error) {
+    console.error('获取CI/CD状态失败:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '获取CI/CD状态失败',
+      message: error.message
+    })
+  }
+})
+
+// 检查构建状态
+app.get('/api/cicd/build-status', async (req, res) => {
+  try {
+    if (!gitWebhookService) {
+      return res.status(500).json({ error: 'Git Webhook服务未初始化' })
+    }
+    
+    const status = await gitWebhookService.checkBuildStatus()
+    res.json(status)
+  } catch (error) {
+    console.error('检查构建状态失败:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '检查构建状态失败',
+      message: error.message
+    })
+  }
 })
 
 // 启动服务器

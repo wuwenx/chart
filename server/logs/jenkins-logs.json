@@ -1,603 +1,603 @@
 {
   "logs": [
     {
-      "timestamp": "2025-10-22T07:02:06.348Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T07:02:06.348Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T07:02:06.348Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T07:02:06.348Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T07:01:35.718Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T07:01:35.717Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T07:01:35.717Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T07:01:35.715Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T07:01:05.735Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T07:01:05.735Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T07:01:05.735Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T07:01:05.734Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T07:00:33.816Z",
-      "level": "info",
-      "message": "开始监控Jenkins构建",
-      "details": "任务: test/web/web-mm-admin-new"
-    },
-    {
-      "timestamp": "2025-10-22T06:54:48.089Z",
-      "level": "error",
-      "message": "触发构建失败: test/web/web-mm-admin-new",
-      "details": "没有新的代码提交，Jenkins拒绝触发构建。请先提交代码变更。"
-    },
-    {
-      "timestamp": "2025-10-22T06:54:05.320Z",
-      "level": "error",
-      "message": "触发构建失败: test/web/web-mm-admin-new",
-      "details": "触发构建失败: Nothing is submitted"
-    },
-    {
-      "timestamp": "2025-10-22T06:51:32.087Z",
-      "level": "error",
-      "message": "触发构建失败: test/web/web-mm-admin-new",
-      "details": "触发构建失败: Nothing is submitted"
-    },
-    {
-      "timestamp": "2025-10-22T06:49:12.974Z",
-      "level": "error",
-      "message": "触发构建失败: test/web/web-mm-admin-new",
-      "details": "触发构建失败: Nothing is submitted"
-    },
-    {
-      "timestamp": "2025-10-22T06:48:36.774Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:48:36.774Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T06:48:36.774Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T06:48:36.773Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T06:48:06.111Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:48:06.110Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T06:48:06.110Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T06:48:06.110Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T06:47:40.777Z",
+      "timestamp": "2025-10-22T09:04:55.083Z",
       "level": "info",
       "message": "触发构建: test/web/web-mm-admin-new",
-      "details": "状态码: 400"
+      "details": "状态码: 201"
     },
     {
-      "timestamp": "2025-10-22T06:47:36.159Z",
+      "timestamp": "2025-10-22T08:43:03.917Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:47:36.157Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:43:03.917Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:47:36.157Z",
+      "timestamp": "2025-10-22T08:43:03.917Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:47:36.156Z",
+      "timestamp": "2025-10-22T08:43:03.917Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:47:06.076Z",
+      "timestamp": "2025-10-22T08:42:33.811Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:47:06.075Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:42:33.811Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:47:06.075Z",
+      "timestamp": "2025-10-22T08:42:33.811Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:47:06.074Z",
+      "timestamp": "2025-10-22T08:42:33.810Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:46:36.495Z",
+      "timestamp": "2025-10-22T08:42:03.745Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:46:36.494Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:42:03.744Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:46:36.494Z",
+      "timestamp": "2025-10-22T08:42:03.744Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:46:36.494Z",
+      "timestamp": "2025-10-22T08:42:03.744Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:46:05.986Z",
+      "timestamp": "2025-10-22T08:41:33.762Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:46:05.986Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:41:33.762Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:46:05.986Z",
+      "timestamp": "2025-10-22T08:41:33.762Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:46:05.985Z",
+      "timestamp": "2025-10-22T08:41:33.761Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:45:57.624Z",
-      "level": "info",
-      "message": "触发构建: test/web/web-mm-admin-new",
-      "details": "状态码: 400"
-    },
-    {
-      "timestamp": "2025-10-22T06:45:37.393Z",
+      "timestamp": "2025-10-22T08:41:03.713Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:45:37.393Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:41:03.713Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:45:37.393Z",
+      "timestamp": "2025-10-22T08:41:03.713Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:45:37.392Z",
+      "timestamp": "2025-10-22T08:41:03.712Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:45:05.962Z",
+      "timestamp": "2025-10-22T08:40:33.768Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:45:05.961Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:40:33.767Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:45:05.962Z",
+      "timestamp": "2025-10-22T08:40:33.767Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:45:05.961Z",
+      "timestamp": "2025-10-22T08:40:33.766Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:44:35.989Z",
+      "timestamp": "2025-10-22T08:40:03.868Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:44:35.988Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:40:03.868Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:44:35.988Z",
+      "timestamp": "2025-10-22T08:40:03.868Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:44:35.988Z",
+      "timestamp": "2025-10-22T08:40:03.868Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:44:05.978Z",
+      "timestamp": "2025-10-22T08:39:33.777Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:44:05.977Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:39:33.776Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:44:05.977Z",
+      "timestamp": "2025-10-22T08:39:33.776Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:44:05.974Z",
+      "timestamp": "2025-10-22T08:39:33.775Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:43:35.977Z",
+      "timestamp": "2025-10-22T08:39:03.871Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:43:35.976Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:39:03.870Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:43:35.976Z",
+      "timestamp": "2025-10-22T08:39:03.870Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:43:35.975Z",
+      "timestamp": "2025-10-22T08:39:03.869Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:43:05.988Z",
+      "timestamp": "2025-10-22T08:38:33.866Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:43:05.987Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:38:33.865Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:43:05.987Z",
+      "timestamp": "2025-10-22T08:38:33.865Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:43:05.987Z",
+      "timestamp": "2025-10-22T08:38:33.865Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:42:35.766Z",
+      "timestamp": "2025-10-22T08:38:03.773Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:42:35.766Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:38:03.772Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:42:35.766Z",
+      "timestamp": "2025-10-22T08:38:03.772Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:42:35.766Z",
+      "timestamp": "2025-10-22T08:38:03.772Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:42:29.944Z",
-      "level": "info",
-      "message": "触发构建: test/web/web-mm-admin-new",
-      "details": "状态码: 400"
-    },
-    {
-      "timestamp": "2025-10-22T06:42:06.270Z",
+      "timestamp": "2025-10-22T08:37:33.859Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:42:06.269Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:37:33.858Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:42:06.269Z",
+      "timestamp": "2025-10-22T08:37:33.858Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:42:06.269Z",
+      "timestamp": "2025-10-22T08:37:33.857Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:41:36.021Z",
+      "timestamp": "2025-10-22T08:37:03.938Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:41:36.019Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:37:03.937Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:41:36.019Z",
+      "timestamp": "2025-10-22T08:37:03.937Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:41:36.018Z",
+      "timestamp": "2025-10-22T08:37:03.936Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:41:06.628Z",
+      "timestamp": "2025-10-22T08:36:33.746Z",
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:41:06.628Z\"}"
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:36:33.745Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:41:06.628Z",
+      "timestamp": "2025-10-22T08:36:33.745Z",
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
     },
     {
-      "timestamp": "2025-10-22T06:41:06.627Z",
+      "timestamp": "2025-10-22T08:36:33.744Z",
       "level": "debug",
       "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:40:44.158Z",
+      "timestamp": "2025-10-22T08:36:03.836Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:40:44.158Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:36:03.835Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:40:44.157Z",
+      "timestamp": "2025-10-22T08:36:03.835Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:36:03.835Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:40:44.156Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:40:14.159Z",
+      "timestamp": "2025-10-22T08:35:34.034Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:40:14.159Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:35:34.034Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:40:14.159Z",
+      "timestamp": "2025-10-22T08:35:34.034Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:35:34.033Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:40:14.157Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:39:44.156Z",
+      "timestamp": "2025-10-22T08:35:03.812Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:39:44.156Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:35:03.812Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:39:44.155Z",
+      "timestamp": "2025-10-22T08:35:03.812Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:35:03.811Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:39:44.153Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:39:14.154Z",
+      "timestamp": "2025-10-22T08:34:33.723Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:39:14.154Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:34:33.722Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:39:14.153Z",
+      "timestamp": "2025-10-22T08:34:33.722Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:34:33.722Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:39:14.152Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:38:44.152Z",
+      "timestamp": "2025-10-22T08:34:03.881Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:38:44.152Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:34:03.881Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:38:44.151Z",
+      "timestamp": "2025-10-22T08:34:03.881Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:34:03.880Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:38:44.150Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:38:14.151Z",
+      "timestamp": "2025-10-22T08:33:33.705Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:38:14.151Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:33:33.705Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:38:14.150Z",
+      "timestamp": "2025-10-22T08:33:33.705Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:33:33.705Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:38:14.149Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:37:44.149Z",
+      "timestamp": "2025-10-22T08:33:03.765Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:37:44.149Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:33:03.764Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:37:44.148Z",
+      "timestamp": "2025-10-22T08:33:03.764Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:33:03.763Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:37:44.148Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:37:14.147Z",
+      "timestamp": "2025-10-22T08:32:33.677Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:37:14.147Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:32:33.677Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:37:14.146Z",
+      "timestamp": "2025-10-22T08:32:33.677Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:32:33.676Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:37:14.144Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:36:44.147Z",
+      "timestamp": "2025-10-22T08:32:03.741Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:36:44.147Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:32:03.741Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:36:44.146Z",
+      "timestamp": "2025-10-22T08:32:03.741Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:32:03.740Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:36:44.144Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:36:14.143Z",
+      "timestamp": "2025-10-22T08:31:33.825Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:36:14.143Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:31:33.825Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:36:14.142Z",
+      "timestamp": "2025-10-22T08:31:33.825Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:31:33.824Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:36:14.141Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:35:44.140Z",
+      "timestamp": "2025-10-22T08:31:04.056Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:35:44.140Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:31:04.056Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:35:44.139Z",
+      "timestamp": "2025-10-22T08:31:04.056Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:31:04.056Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
       "details": null
     },
     {
-      "timestamp": "2025-10-22T06:35:44.139Z",
-      "level": "error",
-      "message": "检查构建状态失败",
-      "details": "获取构建信息失败: 获取任务信息失败: timeout of 10000ms exceeded"
-    },
-    {
-      "timestamp": "2025-10-22T06:35:14.142Z",
+      "timestamp": "2025-10-22T08:30:33.803Z",
       "level": "info",
-      "message": "AI决策: ℹ️ 构建状态：error",
-      "details": "{\"shouldNotify\":false,\"message\":\"ℹ️ 构建状态：error\",\"status\":\"error\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T06:35:14.142Z\"}"
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:30:33.802Z\"}"
     },
     {
-      "timestamp": "2025-10-22T06:35:14.142Z",
+      "timestamp": "2025-10-22T08:30:33.802Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:30:33.801Z",
       "level": "debug",
-      "message": "构建状态检查: error",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T08:30:04.056Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:30:04.056Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T08:30:04.056Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:30:04.055Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T08:29:33.741Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:29:33.740Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T08:29:33.740Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:29:33.739Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T08:29:03.788Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:29:03.787Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T08:29:03.787Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:29:03.787Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T08:28:33.744Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:28:33.743Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T08:28:33.743Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:28:33.742Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T08:28:03.908Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:28:03.907Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T08:28:03.907Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:28:03.907Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T08:27:33.759Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:27:33.758Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T08:27:33.758Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:27:33.757Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-22T08:27:04.130Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
+      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:27:04.130Z\"}"
+    },
+    {
+      "timestamp": "2025-10-22T08:27:04.130Z",
+      "level": "warn",
+      "message": "飞书服务未配置，跳过通知",
+      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
+    },
+    {
+      "timestamp": "2025-10-22T08:27:04.130Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
       "details": null
     }
   ],
@@ -617,5 +617,5 @@
     }
   },
   "buildStatus": "success",
-  "lastUpdated": "2025-10-22T07:02:06.348Z"
+  "lastUpdated": "2025-10-22T09:04:55.083Z"
 }

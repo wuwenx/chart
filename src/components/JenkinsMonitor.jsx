@@ -17,12 +17,14 @@ const JenkinsMonitor = () => {
   const [logs, setLogs] = useState([])
   const [buildStatus, setBuildStatus] = useState('idle') // idle, building, success, failure
   const [lastBuildInfo, setLastBuildInfo] = useState(null)
+  const [cicdStatus, setCicdStatus] = useState({ isProcessing: false, currentRetry: 0, maxRetries: 3 })
 
   // 获取配置
   useEffect(() => {
     fetchJenkinsConfig()
     fetchFeishuConfig()
     fetchLogs()
+    fetchCICDStatus()
   }, [])
 
   const fetchJenkinsConfig = async () => {
@@ -219,6 +221,37 @@ const JenkinsMonitor = () => {
     }
   }
 
+  const triggerCICD = async () => {
+    try {
+      const response = await fetch('/api/cicd/trigger', {
+        method: 'POST'
+      })
+      
+      const result = await response.json()
+      if (result.success) {
+        alert('CI/CD流程已启动！')
+        fetchCICDStatus() // 刷新CI/CD状态
+        fetchLogs() // 刷新日志
+      } else {
+        alert('启动CI/CD失败: ' + result.message)
+      }
+    } catch (error) {
+      alert('启动CI/CD失败: ' + error.message)
+    }
+  }
+
+  const fetchCICDStatus = async () => {
+    try {
+      const response = await fetch('/api/cicd/status')
+      if (response.ok) {
+        const data = await response.json()
+        setCicdStatus(data.status)
+      }
+    } catch (error) {
+      console.error('获取CI/CD状态失败:', error)
+    }
+  }
+
   const getStatusIcon = (status) => {
     switch (status) {
       case 'success':
@@ -264,6 +297,14 @@ const JenkinsMonitor = () => {
           >
             <RefreshCw size={16} />
             触发构建
+          </button>
+          <button 
+            className="control-btn cicd"
+            onClick={triggerCICD}
+            disabled={!jenkinsConfig.jobName}
+          >
+            <RefreshCw size={16} />
+            启动CI/CD
           </button>
         </div>
       </div>
@@ -386,6 +427,40 @@ const JenkinsMonitor = () => {
                 </div>
               </div>
             )}
+          </div>
+
+          <div className="cicd-card">
+            <div className="cicd-header">
+              <h3>CI/CD 状态</h3>
+              <button onClick={fetchCICDStatus} className="refresh-btn">
+                <RefreshCw size={16} />
+                刷新
+              </button>
+            </div>
+            <div className="cicd-content">
+              <div className="cicd-status">
+                <div className="status-item">
+                  <strong>处理状态:</strong> 
+                  <span className={cicdStatus.isProcessing ? 'processing' : 'idle'}>
+                    {cicdStatus.isProcessing ? '进行中' : '空闲'}
+                  </span>
+                </div>
+                <div className="status-item">
+                  <strong>重试次数:</strong> {cicdStatus.currentRetry}/{cicdStatus.maxRetries}
+                </div>
+                {cicdStatus.isProcessing && (
+                  <div className="status-item">
+                    <strong>进度:</strong> 
+                    <div className="progress-bar">
+                      <div 
+                        className="progress-fill" 
+                        style={{ width: `${(cicdStatus.currentRetry / cicdStatus.maxRetries) * 100}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="logs-card">

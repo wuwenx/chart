@@ -390,8 +390,47 @@ class JenkinsService {
         console.log('使用CSRF Token进行请求')
       }
       
-      // Jenkins需要空的请求体
-      const response = await axios.post(buildUrl, {}, {
+      // 检查是否是参数化构建，如果是则使用buildWithParameters端点
+      let requestUrl = buildUrl
+      let requestBody = {}
+      
+      // 尝试获取作业信息来判断是否是参数化构建
+      try {
+        const jobInfoUrl = `${this.config.url}/job/${job.replace(/\//g, '/job/')}/api/json`
+        const jobInfoResponse = await axios.get(jobInfoUrl, {
+          headers: {
+            'Authorization': `Basic ${auth}`,
+            'Accept': 'application/json'
+          }
+        })
+        
+        // 检查是否有参数定义
+        const hasParameters = jobInfoResponse.data.property && 
+          jobInfoResponse.data.property.some(prop => prop._class === 'hudson.model.ParametersDefinitionProperty')
+        
+        if (hasParameters) {
+          console.log('检测到参数化构建，使用buildWithParameters端点')
+          requestUrl = `${this.config.url}/job/${job.replace(/\//g, '/job/')}/buildWithParameters`
+          
+          // 设置默认参数
+          requestBody = {
+            TAG: 'origin/develop',
+            APP_ENV: 'test1',
+            APP_BUILDFORCE: 'no',
+            APP_BUILDCMD: 'pnpm install && npm run build',
+            APP_BUILDFILE: 'dist',
+            APP_NAME: 'web-mm-admin-new',
+            APP_SHORTNAME: 'mm-admin-new',
+            APP_CLASS: 'fe',
+            APP_HOSTNAME: 'test-ex-openresty'
+          }
+        }
+      } catch (error) {
+        console.log('无法获取作业信息，使用标准构建端点:', error.message)
+      }
+      
+      // 发送构建请求
+      const response = await axios.post(requestUrl, requestBody, {
         headers: headers,
         timeout: 10000,
         validateStatus: function (status) {

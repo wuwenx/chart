@@ -1299,3 +1299,102 @@ body {
   margin-top: 4px;
   word-break: break-all;
 }
+
+/* CI/CD 样式 */
+.cicd-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.cicd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cicd-header h3 {
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.cicd-content {
+  margin-top: 10px;
+}
+
+.cicd-status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.status-item:last-child {
+  border-bottom: none;
+}
+
+.status-item strong {
+  color: #555;
+  font-weight: 500;
+}
+
+.status-item .processing {
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+.status-item .idle {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100px;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+  transition: width 0.3s ease;
+}
+
+.control-btn.cicd {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.control-btn.cicd:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3);
+}
+
+.control-btn.cicd:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
