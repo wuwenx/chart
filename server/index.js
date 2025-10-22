@@ -794,10 +794,160 @@ app.get('/api/cicd/build-status', async (req, res) => {
   }
 })
 
+// Jenkins构建失败处理端点（供Jenkins webhook调用）
+app.post('/api/jenkins/build-failed', async (req, res) => {
+  try {
+    console.log('📥 收到Jenkins构建失败通知:', req.body)
+    
+    if (!cicdManager) {
+      return res.status(500).json({ error: 'CI/CD管理器未初始化' })
+    }
+    
+    // 检查是否已经在处理中
+    const status = cicdManager.getStatus()
+    if (status.isProcessing) {
+      console.log('⏳ CI/CD流程正在进行中，跳过新的修复请求')
+      return res.json({ success: false, message: 'CI/CD流程正在进行中' })
+    }
+    
+    // 触发AI修复流程
+    console.log('🚀 开始AI自动修复流程...')
+    const result = await cicdManager.handleCICDProcess()
+    
+    res.json(result)
+  } catch (error) {
+    console.error('处理Jenkins构建失败失败:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '处理Jenkins构建失败失败',
+      message: error.message
+    })
+  }
+})
+
+// 手动触发构建监控和AI修复
+app.post('/api/jenkins/monitor-and-fix', async (req, res) => {
+  try {
+    console.log('🔍 开始监控Jenkins构建状态...')
+    
+    if (!cicdManager) {
+      return res.status(500).json({ error: 'CI/CD管理器未初始化' })
+    }
+    
+    // 检查是否已经在处理中
+    const status = cicdManager.getStatus()
+    if (status.isProcessing) {
+      console.log('⏳ CI/CD流程正在进行中，跳过新的监控请求')
+      return res.json({ success: false, message: 'CI/CD流程正在进行中' })
+    }
+    
+    // 检查最新构建状态
+    const buildStatus = await gitWebhookService.checkBuildStatus()
+    
+    if (buildStatus.success && buildStatus.result === 'FAILURE') {
+      console.log(`❌ 检测到构建失败: #${buildStatus.buildNumber}`)
+      
+      // 触发AI修复流程
+      console.log('🚀 开始AI自动修复流程...')
+      const result = await cicdManager.handleCICDProcess()
+      
+      res.json({
+        success: true,
+        message: '检测到构建失败，已触发AI修复流程',
+        buildStatus: buildStatus,
+        fixResult: result
+      })
+    } else if (buildStatus.success && buildStatus.result === 'SUCCESS') {
+      console.log(`✅ 构建成功: #${buildStatus.buildNumber}`)
+      res.json({
+        success: true,
+        message: '构建成功，无需修复',
+        buildStatus: buildStatus
+      })
+    } else if (buildStatus.success && buildStatus.building) {
+      console.log(`⏳ 构建进行中: #${buildStatus.buildNumber}`)
+      res.json({
+        success: true,
+        message: '构建进行中，请稍后再检查',
+        buildStatus: buildStatus
+      })
+    } else {
+      console.log('❓ 无法获取构建状态')
+      res.json({
+        success: false,
+        message: '无法获取构建状态',
+        buildStatus: buildStatus
+      })
+    }
+  } catch (error) {
+    console.error('监控Jenkins构建状态失败:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '监控Jenkins构建状态失败',
+      message: error.message
+    })
+  }
+})
+
+// 自动监控Jenkins构建状态的服务
+let buildMonitorInterval = null
+let lastCheckedBuildNumber = 0
+
+async function startBuildMonitor() {
+  console.log('🔍 启动Jenkins构建监控服务...')
+  
+  // 每30秒检查一次构建状态
+  buildMonitorInterval = setInterval(async () => {
+    try {
+      if (!gitWebhookService || !cicdManager) {
+        return
+      }
+      
+      // 检查CI/CD是否正在处理中
+      const cicdStatus = cicdManager.getStatus()
+      if (cicdStatus.isProcessing) {
+        return // 如果正在处理，跳过检查
+      }
+      
+      // 检查最新构建状态
+      const buildStatus = await gitWebhookService.checkBuildStatus()
+      
+      if (buildStatus.success && buildStatus.result === 'FAILURE') {
+        // 检查是否是新的失败构建
+        if (buildStatus.buildNumber > lastCheckedBuildNumber) {
+          console.log(`🚨 检测到新的构建失败: #${buildStatus.buildNumber}`)
+          lastCheckedBuildNumber = buildStatus.buildNumber
+          
+          // 触发AI修复流程
+          console.log('🤖 自动触发AI修复流程...')
+          try {
+            await cicdManager.handleCICDProcess()
+          } catch (error) {
+            console.error('自动AI修复失败:', error)
+          }
+        }
+      } else if (buildStatus.success && buildStatus.result === 'SUCCESS') {
+        // 更新最后检查的构建号
+        if (buildStatus.buildNumber > lastCheckedBuildNumber) {
+          console.log(`✅ 构建成功: #${buildStatus.buildNumber}`)
+          lastCheckedBuildNumber = buildStatus.buildNumber
+        }
+      }
+    } catch (error) {
+      console.error('构建监控检查失败:', error)
+    }
+  }, 30000) // 30秒检查一次
+  
+  console.log('✅ Jenkins构建监控服务已启动（每30秒检查一次）')
+}
+
 // 启动服务器
 app.listen(PORT, async () => {
   console.log(`🚀 服务器运行在端口 ${PORT}`)
   await initializeServices()
+  
+  // 启动构建监控服务
+  await startBuildMonitor()
 })
 
 module.exports = app

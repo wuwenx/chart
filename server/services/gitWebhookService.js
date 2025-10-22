@@ -183,12 +183,25 @@ class GitWebhookService {
         const lastBuild = jobInfo.lastBuild
         
         if (lastBuild) {
-          return {
-            success: true,
-            buildNumber: lastBuild.number,
-            building: lastBuild.building,
-            result: lastBuild.result,
-            url: lastBuild.url
+          // 获取具体构建的详细信息
+          const buildApiUrl = `${lastBuild.url}api/json`
+          const buildResponse = await axios.get(buildApiUrl, {
+            headers: {
+              'Authorization': `Basic ${auth}`,
+              'Accept': 'application/json'
+            },
+            timeout: 10000
+          })
+          
+          if (buildResponse.status === 200) {
+            const buildInfo = buildResponse.data
+            return {
+              success: true,
+              buildNumber: buildInfo.number,
+              building: buildInfo.building || false,
+              result: buildInfo.result,
+              url: buildInfo.url
+            }
           }
         }
       }

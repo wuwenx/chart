@@ -8,10 +8,25 @@ class CICDManager {
     this.isProcessing = false
     this.maxRetries = 3
     this.currentRetry = 0
+    this.initialized = false
+  }
+
+  // 初始化CI/CD管理器
+  async initialize() {
+    if (!this.initialized) {
+      console.log('🚀 初始化CI/CD管理器...')
+      // 等待JenkinsAgent的AI模型初始化
+      await this.jenkinsAgent.ensureModelInitialized()
+      this.initialized = true
+      console.log('✅ CI/CD管理器初始化完成')
+    }
   }
 
   // 处理完整的CI/CD流程
   async handleCICDProcess(gitPayload = null) {
+    // 确保CI/CD管理器已初始化
+    await this.initialize()
+    
     if (this.isProcessing) {
       console.log('⏳ CI/CD流程正在进行中，跳过新的请求')
       return { success: false, message: 'CI/CD流程正在进行中' }
