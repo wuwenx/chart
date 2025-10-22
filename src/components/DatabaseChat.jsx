@@ -82,6 +82,51 @@ const DatabaseChat = () => {
     setInputValue(query)
   }
 
+  const formatMessage = (content) => {
+    // 处理Markdown格式的消息内容
+    const lines = content.split('\n')
+    const formattedLines = lines.map((line, index) => {
+      // 处理表格
+      if (line.includes('|') && line.includes('---')) {
+        return <div key={index} className="table-container"><pre className="table-content">{line}</pre></div>
+      }
+      
+      // 处理SQL代码块
+      if (line.startsWith('```sql')) {
+        const sqlContent = content.split('```sql')[1]?.split('```')[0]
+        return <pre key={index} className="sql-code">{sqlContent}</pre>
+      }
+      
+      // 处理JSON代码块
+      if (line.startsWith('```json')) {
+        const jsonContent = content.split('```json')[1]?.split('```')[0]
+        return <pre key={index} className="json-code">{jsonContent}</pre>
+      }
+      
+      // 处理普通代码块
+      if (line.startsWith('```')) {
+        const codeContent = content.split('```')[1]?.split('```')[0]
+        return <pre key={index} className="code-block">{codeContent}</pre>
+      }
+      
+      // 处理粗体文本
+      if (line.includes('**') && line.includes('**')) {
+        const parts = line.split('**')
+        return (
+          <div key={index}>
+            {parts.map((part, i) => 
+              i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+            )}
+          </div>
+        )
+      }
+      
+      return <div key={index}>{line}</div>
+    })
+    
+    return formattedLines
+  }
+
   return (
     <div className="database-chat">
       <div className="chat-header">
@@ -114,7 +159,7 @@ const DatabaseChat = () => {
               {message.type === 'user' ? <User size={18} /> : <Bot size={18} />}
             </div>
             <div className="message-content">
-              {message.content}
+              {formatMessage(message.content)}
             </div>
           </div>
         ))}

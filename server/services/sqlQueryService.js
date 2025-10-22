@@ -186,8 +186,10 @@ SQL 查询：`
       })
 
       // 限制结果展示数量，避免 token 过多
-      const limitedResults = results.slice(0, 10)
-      const resultsText = JSON.stringify(limitedResults, null, 2)
+      const limitedResults = results.slice(0, 20)
+      
+      // 优化结果展示格式
+      const resultsText = this.formatResultsForDisplay(limitedResults)
 
       const response = await explanationChain.call({
         question,
@@ -201,6 +203,43 @@ SQL 查询：`
       console.error('❌ 结果解释失败:', error.message)
       return '结果解释生成失败，但查询已成功执行。'
     }
+  }
+
+  // 格式化结果用于展示
+  formatResultsForDisplay(results) {
+    if (!results || results.length === 0) {
+      return '查询结果为空'
+    }
+
+    // 获取所有字段名
+    const fields = Object.keys(results[0])
+    
+    // 创建表格格式的展示
+    let formattedText = '查询结果表格：\n\n'
+    
+    // 表头
+    formattedText += '| ' + fields.join(' | ') + ' |\n'
+    formattedText += '| ' + fields.map(() => '---').join(' | ') + ' |\n'
+    
+    // 数据行
+    results.forEach(row => {
+      const values = fields.map(field => {
+        let value = row[field]
+        // 处理特殊值
+        if (value === null) return 'NULL'
+        if (value === undefined) return 'undefined'
+        if (typeof value === 'string' && value.length > 50) {
+          return value.substring(0, 47) + '...'
+        }
+        return String(value)
+      })
+      formattedText += '| ' + values.join(' | ') + ' |\n'
+    })
+    
+    formattedText += '\n原始JSON数据：\n'
+    formattedText += JSON.stringify(results, null, 2)
+    
+    return formattedText
   }
 
   async explainError(question, errorMessage) {
