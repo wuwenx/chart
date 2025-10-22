@@ -262,12 +262,12 @@ class ChatService {
   }
 
   // 生成数据库查询响应
-  async generateDatabaseResponse(question, chatHistory = []) {
+  async generateDatabaseResponse(question, options = {}) {
     try {
       console.log('🔍 检测到数据库查询意图:', question)
       
       // 执行数据库查询
-      const queryResult = await this.sqlQueryService.executeQuery(question)
+      const queryResult = await this.sqlQueryService.executeQuery(question, options)
       
       if (queryResult.success) {
         // 构建成功响应
@@ -288,6 +288,14 @@ class ChatService {
         }
         
         response += `**分析报告：**\n${queryResult.explanation}`
+        
+        // 如果有图表数据，返回对象而不是字符串
+        if (queryResult.chartBuffer) {
+          return {
+            text: response,
+            chartBuffer: queryResult.chartBuffer
+          }
+        }
         
         return response
       } else {

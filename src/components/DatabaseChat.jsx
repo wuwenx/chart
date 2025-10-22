@@ -12,6 +12,9 @@ const DatabaseChat = () => {
   ])
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showTelegramConfig, setShowTelegramConfig] = useState(false)
+  const [telegramConfig, setTelegramConfig] = useState({ botToken: '', chatId: '' })
+  const [telegramStatus, setTelegramStatus] = useState(null)
   const messagesEndRef = useRef(null)
 
   const scrollToBottom = () => {
@@ -32,7 +35,7 @@ const DatabaseChat = () => {
     setMessages(prev => [...prev, newMessage])
   }
 
-  const sendMessage = async () => {
+  const sendMessage = async (generateChart = false, sendToTelegram = false) => {
     if (!inputValue.trim() || isLoading) return
 
     const question = inputValue.trim()
@@ -46,12 +49,23 @@ const DatabaseChat = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ question })
+        body: JSON.stringify({ 
+          question,
+          generateChart,
+          sendToTelegram,
+          chartType: 'auto'
+        })
       })
 
       if (response.ok) {
         const data = await response.json()
         addMessage('assistant', data.response)
+        
+        // 如果有图表数据，显示图表
+        if (data.chartBase64) {
+          const chartImage = `data:image/png;base64,${data.chartBase64}`
+          addMessage('assistant', `📊 **生成的图表：**\n\n![查询结果图表](${chartImage})`)
+        }
       } else {
         const errorData = await response.json()
         addMessage('assistant', `❌ 查询失败：${errorData.message}`)
@@ -82,10 +96,79 @@ const DatabaseChat = () => {
     setInputValue(query)
   }
 
+  // Telegram配置功能
+  const configureTelegram = async () => {
+    try {
+      const response = await fetch('/api/telegram/configure', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(telegramConfig)
+      })
+
+      if (response.ok) {
+        addMessage('assistant', '✅ Telegram Bot 配置成功！')
+        setShowTelegramConfig(false)
+        await fetchTelegramStatus()
+      } else {
+        const errorData = await response.json()
+        addMessage('assistant', `❌ Telegram配置失败：${errorData.message}`)
+      }
+    } catch (error) {
+      addMessage('assistant', '❌ Telegram配置失败，请检查网络连接')
+    }
+  }
+
+  const fetchTelegramStatus = async () => {
+    try {
+      const response = await fetch('/api/telegram/status')
+      if (response.ok) {
+        const status = await response.json()
+        setTelegramStatus(status)
+      }
+    } catch (error) {
+      console.error('获取Telegram状态失败:', error)
+    }
+  }
+
+  const testTelegramConnection = async () => {
+    try {
+      const response = await fetch('/api/telegram/test', {
+        method: 'POST'
+      })
+
+      if (response.ok) {
+        addMessage('assistant', '✅ Telegram连接测试成功！')
+      } else {
+        const errorData = await response.json()
+        addMessage('assistant', `❌ Telegram连接测试失败：${errorData.message}`)
+      }
+    } catch (error) {
+      addMessage('assistant', '❌ Telegram连接测试失败，请检查网络连接')
+    }
+  }
+
   const formatMessage = (content) => {
     // 处理Markdown格式的消息内容
     const lines = content.split('\n')
     const formattedLines = lines.map((line, index) => {
+      // 处理图表图片
+      if (line.includes('data:image/png;base64,')) {
+        const base64Match = line.match(/data:image\/png;base64,([^)]+)/)
+        if (base64Match) {
+          return (
+            <div key={index} className="chart-image-container">
+              <img 
+                src={`data:image/png;base64,${base64Match[1]}`} 
+                alt="查询结果图表" 
+                className="chart-image"
+              />
+            </div>
+          )
+        }
+      }
+      
       // 处理表格
       if (line.includes('|') && line.includes('---')) {
         return <div key={index} className="table-container"><pre className="table-content">{line}</pre></div>
@@ -150,6 +233,23 @@ const DatabaseChat = () => {
             </button>
           ))}
         </div>
+        
+        <div className="telegram-controls">
+          <button 
+            className="telegram-config-btn"
+            onClick={() => setShowTelegramConfig(!showTelegramConfig)}
+          >
+            📱 Telegram配置
+          </button>
+          {telegramStatus?.configured && (
+            <button 
+              className="telegram-test-btn"
+              onClick={testTelegramConnection}
+            >
+              测试Telegram连接
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="chat-messages">
@@ -184,6 +284,31 @@ const DatabaseChat = () => {
         <div ref={messagesEndRef} />
       </div>
 
+      {showTelegramConfig && (
+        <div className="telegram-config-panel">
+          <h3>📱 Telegram Bot 配置</h3>
+          <div className="config-form">
+            <input
+              type="text"
+              placeholder="Bot Token"
+              value={telegramConfig.botToken}
+              onChange={(e) => setTelegramConfig({...telegramConfig, botToken: e.target.value})}
+              className="config-input"
+            />
+            <input
+              type="text"
+              placeholder="Chat ID"
+              value={telegramConfig.chatId}
+              onChange={(e) => setTelegramConfig({...telegramConfig, chatId: e.target.value})}
+              className="config-input"
+            />
+            <button onClick={configureTelegram} className="config-save-btn">
+              保存配置
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="chat-input-container">
         <div className="input-form">
           <textarea
@@ -200,13 +325,31 @@ const DatabaseChat = () => {
             placeholder="请输入您想要查询的数据问题..."
             rows={1}
           />
-          <button
-            className="send-btn"
-            onClick={sendMessage}
-            disabled={!inputValue.trim() || isLoading}
-          >
-            <Send size={18} />
-          </button>
+          <div className="action-buttons">
+            <button
+              className="chart-btn"
+              onClick={() => sendMessage(true, false)}
+              disabled={!inputValue.trim() || isLoading}
+              title="生成图表"
+            >
+              📊
+            </button>
+            <button
+              className="telegram-btn"
+              onClick={() => sendMessage(true, true)}
+              disabled={!inputValue.trim() || isLoading || !telegramStatus?.configured}
+              title="生成图表并发送到Telegram"
+            >
+              📱
+            </button>
+            <button
+              className="send-btn"
+              onClick={sendMessage}
+              disabled={!inputValue.trim() || isLoading}
+            >
+              <Send size={18} />
+            </button>
+          </div>
         </div>
       </div>
     </div>

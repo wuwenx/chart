@@ -2,6 +2,8 @@ const { PromptTemplate } = require('langchain/prompts')
 const { LLMChain } = require('langchain/chains')
 const { DatabaseService } = require('./databaseService')
 const { AIModelManager } = require('./aiModelManager')
+const { ChartGenerator } = require('./chartGenerator')
+const { TelegramService } = require('./telegramService')
 
 class SQLQueryService {
   constructor() {
@@ -9,6 +11,8 @@ class SQLQueryService {
     this.aiManager = new AIModelManager()
     this.llm = this.aiManager.getLLM()
     this.databaseInfo = null
+    this.chartGenerator = new ChartGenerator()
+    this.telegramService = new TelegramService()
     
     this.setupPrompts()
   }
@@ -145,7 +149,7 @@ SQL 查询：`
     }
   }
 
-  async executeQuery(question) {
+  async executeQuery(question, options = {}) {
     try {
       // 生成 SQL
       const sql = await this.generateSQL(question)
@@ -157,13 +161,36 @@ SQL 查询：`
       // 解释结果
       const explanation = await this.explainResults(question, sql, results)
       
-      return {
+      const response = {
         success: true,
         sql,
         results,
         explanation,
         rowCount: results.length
       }
+
+      // 如果启用了图表生成
+      if (options.generateChart && results.length > 0) {
+        try {
+          const chartBuffer = await this.chartGenerator.generateChart(results, options.chartType)
+          response.chartBuffer = chartBuffer
+          console.log('📊 图表生成成功')
+        } catch (chartError) {
+          console.error('图表生成失败:', chartError.message)
+        }
+      }
+
+      // 如果启用了Telegram发送
+      if (options.sendToTelegram && this.telegramService.isConfigured) {
+        try {
+          await this.telegramService.sendQueryResult(sql, results, response.chartBuffer)
+          console.log('📱 Telegram发送成功')
+        } catch (telegramError) {
+          console.error('Telegram发送失败:', telegramError.message)
+        }
+      }
+
+      return response
     } catch (error) {
       console.error('❌ 查询执行失败:', error.message)
       
@@ -349,6 +376,21 @@ SQL：SELECT product_name, SUM(sales_amount) as total_sales FROM sales GROUP BY 
   }
 
   // 关闭服务
+  // 配置Telegram Bot
+  configureTelegram(botToken, chatId) {
+    return this.telegramService.configure(botToken, chatId)
+  }
+
+  // 获取Telegram状态
+  getTelegramStatus() {
+    return this.telegramService.getStatus()
+  }
+
+  // 测试Telegram连接
+  async testTelegramConnection() {
+    return await this.telegramService.testConnection()
+  }
+
   async close() {
     try {
       await this.databaseService.disconnect()

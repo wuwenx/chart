@@ -335,18 +335,32 @@ app.get('/api/database/overview', async (req, res) => {
 // 执行数据库查询
 app.post('/api/database/query', async (req, res) => {
   try {
-    const { question } = req.body
+    const { question, generateChart, sendToTelegram, chartType } = req.body
     
     if (!question) {
       return res.status(400).json({ error: '查询问题不能为空' })
     }
 
-    const result = await chatService.generateDatabaseResponse(question)
-    res.json({ 
+    const options = {
+      generateChart: generateChart || false,
+      sendToTelegram: sendToTelegram || false,
+      chartType: chartType || 'auto'
+    }
+
+    const result = await chatService.generateDatabaseResponse(question, options)
+    
+    const response = { 
       success: true,
-      response: result,
+      response: typeof result === 'object' ? result.text : result,
       timestamp: new Date().toISOString()
-    })
+    }
+
+    // 如果有图表数据，转换为base64
+    if (typeof result === 'object' && result.chartBuffer) {
+      response.chartBase64 = result.chartBuffer.toString('base64')
+    }
+
+    res.json(response)
   } catch (error) {
     console.error('数据库查询错误:', error)
     res.status(500).json({ 
@@ -370,6 +384,71 @@ app.get('/api/database/test', async (req, res) => {
     res.status(500).json({ 
       success: false,
       error: '数据库连接测试失败',
+      message: error.message
+    })
+  }
+})
+
+// 配置Telegram Bot
+app.post('/api/telegram/configure', async (req, res) => {
+  try {
+    const { botToken, chatId } = req.body
+    
+    if (!botToken || !chatId) {
+      return res.status(400).json({ error: 'Bot Token 和 Chat ID 不能为空' })
+    }
+
+    const success = chatService.sqlQueryService.configureTelegram(botToken, chatId)
+    
+    if (success) {
+      res.json({ 
+        success: true,
+        message: 'Telegram Bot 配置成功'
+      })
+    } else {
+      res.status(400).json({ 
+        success: false,
+        error: 'Telegram Bot 配置失败'
+      })
+    }
+  } catch (error) {
+    console.error('Telegram配置错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: 'Telegram配置失败',
+      message: error.message
+    })
+  }
+})
+
+// 获取Telegram状态
+app.get('/api/telegram/status', async (req, res) => {
+  try {
+    const status = chatService.sqlQueryService.getTelegramStatus()
+    res.json(status)
+  } catch (error) {
+    console.error('获取Telegram状态错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '获取Telegram状态失败',
+      message: error.message
+    })
+  }
+})
+
+// 测试Telegram连接
+app.post('/api/telegram/test', async (req, res) => {
+  try {
+    await chatService.sqlQueryService.testTelegramConnection()
+    res.json({ 
+      success: true,
+      message: 'Telegram连接测试成功'
+    })
+  } catch (error) {
+    console.error('Telegram连接测试错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: 'Telegram连接测试失败',
       message: error.message
     })
   }
