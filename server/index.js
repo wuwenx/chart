@@ -633,13 +633,22 @@ app.post('/api/feishu/config', async (req, res) => {
       return res.status(500).json({ error: '飞书服务未初始化' })
     }
     
-    const { webhookUrl, secret } = req.body
+    const { webhookUrl, secret, apiConfig } = req.body
     
-    if (!webhookUrl) {
-      return res.status(400).json({ error: 'Webhook URL不能为空' })
+    // 检查是否至少配置了一种方式
+    const hasWebhook = webhookUrl && webhookUrl.trim() !== ''
+    const hasApi = apiConfig && apiConfig.accessToken && apiConfig.receiveId
+    
+    if (!hasWebhook && !hasApi) {
+      return res.status(400).json({ error: '至少需要配置Webhook URL或API配置' })
     }
     
-    feishuService.updateConfig({ webhookUrl, secret })
+    const config = { webhookUrl, secret }
+    if (apiConfig) {
+      config.apiConfig = apiConfig
+    }
+    
+    feishuService.updateConfig(config)
     
     res.json({ 
       success: true,

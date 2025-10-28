@@ -7,7 +7,13 @@ class FeishuService {
   constructor() {
     this.config = {
       webhookUrl: '',
-      secret: ''
+      secret: '',
+      // 新增API配置
+      apiConfig: {
+        accessToken: '',
+        receiveId: '',
+        receiveIdType: 'open_id'
+      }
     }
     this.configFile = path.join(__dirname, '../config/feishu-config.json')
     
@@ -45,10 +51,59 @@ class FeishuService {
     return crypto.createHmac('sha256', secret).update(stringToSign).digest('base64')
   }
 
-  // 发送文本消息
+  // 使用飞书开放平台API发送文本消息
+  async sendTextMessageViaAPI(text, title = null) {
+    if (!this.config.apiConfig.accessToken || !this.config.apiConfig.receiveId) {
+      throw new Error('飞书API配置不完整，需要accessToken和receiveId')
+    }
+
+    try {
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.config.apiConfig.accessToken}`
+      }
+
+      const messageContent = title ? `**${title}**\n\n${text}` : text
+      
+      const message = {
+        content: JSON.stringify({
+          text: messageContent
+        }),
+        msg_type: 'text',
+        receive_id: this.config.apiConfig.receiveId
+      }
+
+      const url = `https://open.larksuite.com/open-apis/im/v1/messages?receive_id_type=${this.config.apiConfig.receiveIdType}`
+      
+      const response = await axios.post(url, message, {
+        headers,
+        timeout: 10000
+      })
+
+      if (response.data.code === 0) {
+        return {
+          success: true,
+          message: '消息发送成功',
+          data: response.data
+        }
+      } else {
+        throw new Error(`飞书API错误: ${response.data.msg}`)
+      }
+    } catch (error) {
+      throw new Error(`发送飞书消息失败: ${error.message}`)
+    }
+  }
+
+  // 发送文本消息（优先使用API方式）
   async sendTextMessage(text, title = null) {
+    // 优先使用API方式
+    if (this.config.apiConfig.accessToken && this.config.apiConfig.receiveId) {
+      return await this.sendTextMessageViaAPI(text, title)
+    }
+    
+    // 回退到webhook方式
     if (!this.config.webhookUrl) {
-      throw new Error('飞书Webhook URL未配置')
+      throw new Error('飞书配置不完整，需要配置API或Webhook')
     }
 
     try {
@@ -272,8 +327,45 @@ class FeishuService {
   async testConnection(config = null) {
     const testConfig = config || this.config
     
+    // 优先测试API方式
+    if (testConfig.apiConfig && testConfig.apiConfig.accessToken && testConfig.apiConfig.receiveId) {
+      try {
+        const headers = {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${testConfig.apiConfig.accessToken}`
+        }
+
+        const testMessage = {
+          content: JSON.stringify({
+            text: '🔔 飞书通知测试消息\n\n这是一条测试消息，用于验证飞书机器人配置是否正确。'
+          }),
+          msg_type: 'text',
+          receive_id: testConfig.apiConfig.receiveId
+        }
+
+        const url = `https://open.larksuite.com/open-apis/im/v1/messages?receive_id_type=${testConfig.apiConfig.receiveIdType}`
+        
+        const response = await axios.post(url, testMessage, {
+          headers,
+          timeout: 10000
+        })
+
+        if (response.data.code === 0) {
+          return {
+            success: true,
+            message: '飞书API连接测试成功'
+          }
+        } else {
+          throw new Error(`飞书API错误: ${response.data.msg}`)
+        }
+      } catch (error) {
+        throw new Error(`飞书API连接测试失败: ${error.message}`)
+      }
+    }
+    
+    // 回退到webhook方式
     if (!testConfig.webhookUrl) {
-      throw new Error('飞书Webhook URL未配置')
+      throw new Error('飞书配置不完整，需要配置API或Webhook')
     }
 
     try {
@@ -303,7 +395,7 @@ class FeishuService {
       if (response.data.code === 0) {
         return {
           success: true,
-          message: '飞书连接测试成功'
+          message: '飞书Webhook连接测试成功'
         }
       } else {
         throw new Error(`飞书API错误: ${response.data.msg}`)
@@ -323,7 +415,12 @@ class FeishuService {
   getConfig() {
     return {
       webhookUrl: this.config.webhookUrl,
-      hasSecret: !!this.config.secret
+      hasSecret: !!this.config.secret,
+      apiConfig: {
+        hasAccessToken: !!this.config.apiConfig.accessToken,
+        hasReceiveId: !!this.config.apiConfig.receiveId,
+        receiveIdType: this.config.apiConfig.receiveIdType
+      }
     }
   }
 }

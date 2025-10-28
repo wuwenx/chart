@@ -12,7 +12,12 @@ const JenkinsMonitor = () => {
   })
   const [feishuConfig, setFeishuConfig] = useState({
     webhookUrl: '',
-    secret: ''
+    secret: '',
+    apiConfig: {
+      accessToken: '',
+      receiveId: '',
+      receiveIdType: 'open_id'
+    }
   })
   const [logs, setLogs] = useState([])
   const [buildStatus, setBuildStatus] = useState('idle') // idle, building, success, failure
@@ -52,7 +57,16 @@ const JenkinsMonitor = () => {
       const response = await fetch('/api/feishu/config')
       if (response.ok) {
         const config = await response.json()
-        setFeishuConfig(config)
+        // 确保apiConfig字段存在
+        setFeishuConfig({
+          webhookUrl: config.webhookUrl || '',
+          secret: config.secret || '',
+          apiConfig: {
+            accessToken: config.apiConfig?.accessToken || '',
+            receiveId: config.apiConfig?.receiveId || '',
+            receiveIdType: config.apiConfig?.receiveIdType || 'open_id'
+          }
+        })
       }
     } catch (error) {
       console.error('获取飞书配置失败:', error)
@@ -370,24 +384,72 @@ const JenkinsMonitor = () => {
               <h3>飞书通知配置</h3>
             </div>
             <div className="jenkins-config-form">
-              <div className="jenkins-form-group">
-                <label>飞书 Webhook URL:</label>
-                <input
-                  type="text"
-                  value={feishuConfig.webhookUrl}
-                  onChange={(e) => setFeishuConfig({...feishuConfig, webhookUrl: e.target.value})}
-                  placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/..."
-                />
+              <div className="config-section">
+                <h4>方式一：Webhook（推荐用于群聊）</h4>
+                <div className="jenkins-form-group">
+                  <label>飞书 Webhook URL:</label>
+                  <input
+                    type="text"
+                    value={feishuConfig.webhookUrl}
+                    onChange={(e) => setFeishuConfig({...feishuConfig, webhookUrl: e.target.value})}
+                    placeholder="https://open.feishu.cn/open-apis/bot/v2/hook/..."
+                  />
+                </div>
+                <div className="jenkins-form-group">
+                  <label>签名密钥:</label>
+                  <input
+                    type="password"
+                    value={feishuConfig.secret}
+                    onChange={(e) => setFeishuConfig({...feishuConfig, secret: e.target.value})}
+                    placeholder="飞书机器人签名密钥"
+                  />
+                </div>
               </div>
-              <div className="jenkins-form-group">
-                <label>签名密钥:</label>
-                <input
-                  type="password"
-                  value={feishuConfig.secret}
-                  onChange={(e) => setFeishuConfig({...feishuConfig, secret: e.target.value})}
-                  placeholder="飞书机器人签名密钥"
-                />
+              
+              <div className="config-section">
+                <h4>方式二：开放平台API（推荐用于私聊）</h4>
+                <div className="jenkins-form-group">
+                  <label>Access Token:</label>
+                  <input
+                    type="password"
+                    value={feishuConfig.apiConfig.accessToken}
+                    onChange={(e) => setFeishuConfig({
+                      ...feishuConfig, 
+                      apiConfig: {...feishuConfig.apiConfig, accessToken: e.target.value}
+                    })}
+                    placeholder="t-g207ao95GIXKA42GE2DFLT355SXX4FRVJJXBPHJL"
+                  />
+                </div>
+                <div className="jenkins-form-group">
+                  <label>接收者ID:</label>
+                  <input
+                    type="text"
+                    value={feishuConfig.apiConfig.receiveId}
+                    onChange={(e) => setFeishuConfig({
+                      ...feishuConfig, 
+                      apiConfig: {...feishuConfig.apiConfig, receiveId: e.target.value}
+                    })}
+                    placeholder="ou_02901dcb31a01969258ced02bcadd1a6"
+                  />
+                </div>
+                <div className="jenkins-form-group">
+                  <label>接收者ID类型:</label>
+                  <select
+                    value={feishuConfig.apiConfig.receiveIdType}
+                    onChange={(e) => setFeishuConfig({
+                      ...feishuConfig, 
+                      apiConfig: {...feishuConfig.apiConfig, receiveIdType: e.target.value}
+                    })}
+                  >
+                    <option value="open_id">open_id</option>
+                    <option value="user_id">user_id</option>
+                    <option value="union_id">union_id</option>
+                    <option value="email">email</option>
+                    <option value="chat_id">chat_id</option>
+                  </select>
+                </div>
               </div>
+              
               <div className="jenkins-form-actions">
                 <button onClick={saveFeishuConfig} className="jenkins-save-btn">
                   保存配置

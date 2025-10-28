@@ -209,9 +209,9 @@ ${logs}
       
       // 基于分析结果做决策
       const decision = {
-        shouldNotify: analysis.shouldNotify,
-        priority: analysis.priority,
-        message: analysis.notificationMessage,
+        shouldNotify: this.shouldSendNotification(buildStatus, analysis),
+        priority: analysis.priority || 'medium',
+        message: analysis.notificationMessage || analysis.message || this.getDefaultMessage(buildStatus, buildInfo),
         analysis: analysis,
         timestamp: new Date().toISOString(),
         buildInfo: buildInfo,
@@ -227,6 +227,33 @@ ${logs}
       
       // 降级到规则决策
       return this.getRuleBasedDecision(buildStatus, buildInfo, jobName)
+    }
+  }
+
+  // 判断是否应该发送通知
+  shouldSendNotification(buildStatus, analysis) {
+    // 对于成功和失败的构建，总是发送通知
+    if (buildStatus === 'success' || buildStatus === 'failure') {
+      return true
+    }
+    
+    // 对于其他状态，使用AI分析的结果
+    return analysis.shouldNotify || false
+  }
+
+  // 获取默认消息
+  getDefaultMessage(buildStatus, buildInfo) {
+    const duration = Math.round(buildInfo.duration / 1000)
+    
+    switch (buildStatus) {
+      case 'success':
+        return `✅ 构建成功！任务 ${buildInfo.jobName || 'Jenkins'} 构建 #${buildInfo.number} 已完成，耗时 ${duration} 秒`
+      case 'failure':
+        return `❌ 构建失败！任务 ${buildInfo.jobName || 'Jenkins'} 构建 #${buildInfo.number} 失败，需要立即处理`
+      case 'building':
+        return `🔄 构建进行中：任务 ${buildInfo.jobName || 'Jenkins'} 构建 #${buildInfo.number} 正在执行`
+      default:
+        return `ℹ️ 构建状态更新：${buildStatus}`
     }
   }
 

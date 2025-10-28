@@ -1,6 +1,144 @@
 {
   "logs": [
     {
+      "timestamp": "2025-10-24T10:08:54.417Z",
+      "level": "info",
+      "message": "触发构建: test/web/web-mm-admin-new",
+      "details": "状态码: 201"
+    },
+    {
+      "timestamp": "2025-10-24T10:05:54.524Z",
+      "level": "info",
+      "message": "触发构建: test/web/web-mm-admin-new",
+      "details": "状态码: 201"
+    },
+    {
+      "timestamp": "2025-10-24T10:05:26.342Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 Jenkins 构建 #231 已完成，耗时 51 秒",
+      "details": "{\"shouldNotify\":false,\"priority\":\"medium\",\"message\":\"✅ 构建成功！任务 Jenkins 构建 #231 已完成，耗时 51 秒\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-24T10:05:26.342Z\",\"buildInfo\":{\"number\":231,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/231/\",\"timestamp\":1761300056559,\"duration\":51458,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/App.vue\"],\"commitId\":\"9e99468707813ee920dbda3f497065cf1b2d1447\",\"timestamp\":1761300004000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Auto-fix: src/App.vue文件存在语法错误，缺少分号，导致vite build失败。\\n\",\"date\":\"2025-10-24 18:00:04 +0800\",\"id\":\"9e99468707813ee920dbda3f497065cf1b2d1447\",\"msg\":\"🔧 Auto-fix: src/App.vue文件存在语法错误，缺少分号，导致vite build失败。\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/App.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-24T10:05:23.061Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-24T10:05:00.301Z",
+      "level": "info",
+      "message": "AI决策: ✅ 构建成功！任务 Jenkins 构建 #231 已完成，耗时 51 秒",
+      "details": "{\"shouldNotify\":false,\"priority\":\"medium\",\"message\":\"✅ 构建成功！任务 Jenkins 构建 #231 已完成，耗时 51 秒\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-24T10:05:00.301Z\",\"buildInfo\":{\"number\":231,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/231/\",\"timestamp\":1761300056559,\"duration\":51458,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/App.vue\"],\"commitId\":\"9e99468707813ee920dbda3f497065cf1b2d1447\",\"timestamp\":1761300004000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Auto-fix: src/App.vue文件存在语法错误，缺少分号，导致vite build失败。\\n\",\"date\":\"2025-10-24 18:00:04 +0800\",\"id\":\"9e99468707813ee920dbda3f497065cf1b2d1447\",\"msg\":\"🔧 Auto-fix: src/App.vue文件存在语法错误，缺少分号，导致vite build失败。\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/App.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-24T10:04:53.549Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-24T10:04:21.443Z",
+      "level": "info",
+      "message": "开始监控Jenkins构建",
+      "details": "任务: test/web/web-mm-admin-new"
+    },
+    {
+      "timestamp": "2025-10-23T16:52:33.350Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:52:10.388Z",
+      "level": "info",
+      "message": "AI决策: undefined",
+      "details": "{\"priority\":\"medium\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-23T16:52:10.387Z\",\"buildInfo\":{\"number\":225,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/225/\",\"timestamp\":1761149419705,\"duration\":49385,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/layouts/components/UserProfile.vue\"],\"commitId\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"timestamp\":1761149408000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\\n\",\"date\":\"2025-10-23 00:10:08 +0800\",\"id\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"msg\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/layouts/components/UserProfile.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-23T16:52:03.487Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:51:42.903Z",
+      "level": "info",
+      "message": "AI决策: undefined",
+      "details": "{\"priority\":\"medium\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-23T16:51:42.903Z\",\"buildInfo\":{\"number\":225,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/225/\",\"timestamp\":1761149419705,\"duration\":49385,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/layouts/components/UserProfile.vue\"],\"commitId\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"timestamp\":1761149408000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\\n\",\"date\":\"2025-10-23 00:10:08 +0800\",\"id\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"msg\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/layouts/components/UserProfile.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-23T16:51:33.412Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:51:09.627Z",
+      "level": "info",
+      "message": "AI决策: undefined",
+      "details": "{\"priority\":\"medium\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-23T16:51:09.627Z\",\"buildInfo\":{\"number\":225,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/225/\",\"timestamp\":1761149419705,\"duration\":49385,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/layouts/components/UserProfile.vue\"],\"commitId\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"timestamp\":1761149408000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\\n\",\"date\":\"2025-10-23 00:10:08 +0800\",\"id\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"msg\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/layouts/components/UserProfile.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-23T16:51:03.461Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:50:36.603Z",
+      "level": "info",
+      "message": "AI决策: undefined",
+      "details": "{\"priority\":\"high\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"syntax_error\",\"file\":\"src/main.js\",\"message\":\"Failed to parse source for import analysis because the content contains invalid JS syntax\",\"line\":8,\"severity\":\"high\"}],\"summary\":\"Vite 构建失败，src/main.js文件第8行存在语法错误，导致无法进行模块导入分析。\",\"recommendations\":[\"立即修复 src/main.js 文件第8行的语法错误。可能的原因包括：缺少分号、括号不匹配、错误的关键字等。\",\"使用代码编辑器或 lint 工具检查整个项目中的语法错误，确保代码符合 JavaScript 语法规范。\",\"检查构建过程中使用的 Vite 插件和配置，确保它们与项目的代码兼容。\"],\"priority\":\"high\"},\"timestamp\":\"2025-10-23T16:50:36.603Z\",\"buildInfo\":{\"number\":225,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/225/\",\"timestamp\":1761149419705,\"duration\":49385,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/layouts/components/UserProfile.vue\"],\"commitId\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"timestamp\":1761149408000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\\n\",\"date\":\"2025-10-23 00:10:08 +0800\",\"id\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"msg\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/layouts/components/UserProfile.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-23T16:50:33.426Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:50:08.326Z",
+      "level": "info",
+      "message": "AI决策: undefined",
+      "details": "{\"priority\":\"medium\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-23T16:50:08.326Z\",\"buildInfo\":{\"number\":225,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/225/\",\"timestamp\":1761149419705,\"duration\":49385,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/layouts/components/UserProfile.vue\"],\"commitId\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"timestamp\":1761149408000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\\n\",\"date\":\"2025-10-23 00:10:08 +0800\",\"id\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"msg\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/layouts/components/UserProfile.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-23T16:50:03.756Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:49:38.004Z",
+      "level": "info",
+      "message": "AI决策: undefined",
+      "details": "{\"priority\":\"medium\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-23T16:49:38.004Z\",\"buildInfo\":{\"number\":225,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/225/\",\"timestamp\":1761149419705,\"duration\":49385,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/layouts/components/UserProfile.vue\"],\"commitId\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"timestamp\":1761149408000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\\n\",\"date\":\"2025-10-23 00:10:08 +0800\",\"id\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"msg\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/layouts/components/UserProfile.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-23T16:49:33.483Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:49:10.267Z",
+      "level": "info",
+      "message": "AI决策: undefined",
+      "details": "{\"priority\":\"medium\",\"analysis\":{\"success\":true,\"needsFix\":true,\"issues\":[{\"type\":\"other\",\"file\":\"unknown\",\"message\":\"无法解析构建日志，需要手动检查\",\"line\":0,\"severity\":\"medium\"}],\"summary\":\"构建失败，需要手动检查\",\"recommendations\":[\"检查构建日志\",\"检查代码语法\"],\"priority\":\"medium\"},\"timestamp\":\"2025-10-23T16:49:10.267Z\",\"buildInfo\":{\"number\":225,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/225/\",\"timestamp\":1761149419705,\"duration\":49385,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[{\"_class\":\"hudson.plugins.git.GitChangeSet\",\"affectedPaths\":[\"src/layouts/components/UserProfile.vue\"],\"commitId\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"timestamp\":1761149408000,\"author\":{\"absoluteUrl\":\"https://jks.popfun.xyz/user/376679129\",\"fullName\":\"376679129\"},\"authorEmail\":\"376679129@qq.com\",\"comment\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\\n\",\"date\":\"2025-10-23 00:10:08 +0800\",\"id\":\"fd30fe4598e9635c7a8fe8d9f83fc9a9c4fe8830\",\"msg\":\"🔧 Update: Changed user avatar import in UserProfile.vue from avatar-122.png to avatar-1.png.\",\"paths\":[{\"editType\":\"edit\",\"file\":\"src/layouts/components/UserProfile.vue\"}]}],\"kind\":\"git\"}},\"jobName\":\"test/web/web-mm-admin-new\"}"
+    },
+    {
+      "timestamp": "2025-10-23T16:49:03.386Z",
+      "level": "debug",
+      "message": "构建状态检查: success",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-23T16:48:31.576Z",
+      "level": "info",
+      "message": "开始监控Jenkins构建",
+      "details": "任务: test/web/web-mm-admin-new"
+    },
+    {
       "timestamp": "2025-10-22T09:04:55.083Z",
       "level": "info",
       "message": "触发构建: test/web/web-mm-admin-new",
@@ -461,161 +599,47 @@
       "level": "info",
       "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
       "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:30:33.802Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:30:33.802Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:30:33.801Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:30:04.056Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:30:04.056Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:30:04.056Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:30:04.055Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:29:33.741Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:29:33.740Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:29:33.740Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:29:33.739Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:29:03.788Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:29:03.787Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:29:03.787Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:29:03.787Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:28:33.744Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:28:33.743Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:28:33.743Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:28:33.742Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:28:03.908Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:28:03.907Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:28:03.907Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:28:03.907Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:27:33.759Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:27:33.758Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:27:33.758Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:27:33.757Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:27:04.130Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:27:04.130Z\"}"
-    },
-    {
-      "timestamp": "2025-10-22T08:27:04.130Z",
-      "level": "warn",
-      "message": "飞书服务未配置，跳过通知",
-      "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:27:04.130Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
     }
   ],
   "lastBuildInfo": {
-    "number": 183,
-    "url": "https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/",
-    "timestamp": 1761110028292,
-    "duration": 9286,
+    "number": 231,
+    "url": "https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/231/",
+    "timestamp": 1761300056559,
+    "duration": 51458,
     "result": "SUCCESS",
     "building": false,
     "builder": "N/A",
     "description": "<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>",
     "changeSet": {
       "_class": "hudson.plugins.git.GitChangeSetList",
-      "items": [],
+      "items": [
+        {
+          "_class": "hudson.plugins.git.GitChangeSet",
+          "affectedPaths": [
+            "src/App.vue"
+          ],
+          "commitId": "9e99468707813ee920dbda3f497065cf1b2d1447",
+          "timestamp": 1761300004000,
+          "author": {
+            "absoluteUrl": "https://jks.popfun.xyz/user/376679129",
+            "fullName": "376679129"
+          },
+          "authorEmail": "376679129@qq.com",
+          "comment": "🔧 Auto-fix: src/App.vue文件存在语法错误，缺少分号，导致vite build失败。\n",
+          "date": "2025-10-24 18:00:04 +0800",
+          "id": "9e99468707813ee920dbda3f497065cf1b2d1447",
+          "msg": "🔧 Auto-fix: src/App.vue文件存在语法错误，缺少分号，导致vite build失败。",
+          "paths": [
+            {
+              "editType": "edit",
+              "file": "src/App.vue"
+            }
+          ]
+        }
+      ],
       "kind": "git"
     }
   },
   "buildStatus": "success",
-  "lastUpdated": "2025-10-22T09:04:55.083Z"
+  "lastUpdated": "2025-10-24T10:08:54.417Z"
 }
