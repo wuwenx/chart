@@ -1,16 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Send, Database, Bot, User, X, ExternalLink } from 'lucide-react'
 import * as echarts from 'echarts'
+import ChatHistoryManager from '../services/chatHistoryManager'
 
 const DatabaseChat = () => {
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      type: 'assistant',
-      content: '您好！我是数据库查询助手，可以帮您用自然语言查询数据库。请告诉我您想要查询什么数据。',
-      timestamp: new Date()
-    }
-  ])
+  // 初始化 LangChain 消息历史管理器
+  const historyManager = useRef(new ChatHistoryManager('database_chat_history'))
+  
+  // 从 LangChain 历史管理器加载消息
+  const loadMessages = () => {
+    const langchainMessages = historyManager.current.loadMessages()
+    return historyManager.current.toUIMessages(langchainMessages)
+  }
+
+  const [messages, setMessages] = useState(loadMessages())
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showTelegramConfig, setShowTelegramConfig] = useState(false)
@@ -91,16 +94,28 @@ const DatabaseChat = () => {
     }
   }
 
-  const addMessage = (type, content) => {
-    // 使用时间戳 + 随机数确保 ID 唯一性
-    const newMessage = {
-      id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      type,
-      content,
-      timestamp: new Date()
+  const addMessage = (type, content, chartInfo = null) => {
+    let langchainMessage
+    
+    if (type === 'user') {
+      langchainMessage = historyManager.current.addUserMessage(content)
+    } else {
+      langchainMessage = historyManager.current.addAIMessage(content, chartInfo)
     }
-    setMessages(prev => [...prev, newMessage])
-    return newMessage.id  // 返回消息 ID
+    
+    // 转换为 UI 格式
+    const uiMessage = historyManager.current.toUIMessages([langchainMessage])[0]
+    
+    // 更新状态
+    setMessages(prev => {
+      const updated = [...prev, uiMessage]
+      // 转换为 LangChain 格式并保存
+      const langchainMessages = historyManager.current.fromUIMessages(updated)
+      historyManager.current.saveMessages(langchainMessages)
+      return updated
+    })
+    
+    return uiMessage.id  // 返回消息 ID
   }
 
   const sendMessage = async (generateChart = false, sendToTelegram = false) => {
@@ -164,13 +179,7 @@ const DatabaseChat = () => {
         }
         
         // 添加消息，如果有关联图表则保存图表信息
-        const messageId = addMessage('assistant', responseContent)
-        if (chartInfo) {
-          // 将图表信息附加到消息上
-          setMessages(prev => prev.map(msg => 
-            msg.id === messageId ? { ...msg, chartInfo } : msg
-          ))
-        }
+        const messageId = addMessage('assistant', responseContent, chartInfo)
       } else {
         const errorData = await response.json()
         addMessage('assistant', `❌ 查询失败：${errorData.message}`)
@@ -438,6 +447,19 @@ const DatabaseChat = () => {
               测试Telegram连接
             </button>
           )}
+          <button
+            className="clear-history-btn"
+            onClick={() => {
+              if (window.confirm('确定要清除所有聊天记录吗？')) {
+                historyManager.current.clearHistory()
+                const defaultMessages = loadMessages()
+                setMessages(defaultMessages)
+              }
+            }}
+            title="清除聊天记录"
+          >
+            🗑️ 清除记录
+          </button>
         </div>
       </div>
 
