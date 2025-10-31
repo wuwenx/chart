@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Send, Database, Bot, User } from 'lucide-react'
+import { Send, Database, Bot, User, X, ExternalLink } from 'lucide-react'
+import * as echarts from 'echarts'
 
 const DatabaseChat = () => {
   const [messages, setMessages] = useState([
@@ -18,6 +19,10 @@ const DatabaseChat = () => {
   const [databases, setDatabases] = useState([])
   const [currentDatabase, setCurrentDatabase] = useState('')
   const [isLoadingDatabase, setIsLoadingDatabase] = useState(false)
+  const [showChartModal, setShowChartModal] = useState(false)
+  const [currentChartConfig, setCurrentChartConfig] = useState(null)
+  const chartContainerRef = useRef(null)
+  const chartInstanceRef = useRef(null)
   const messagesEndRef = useRef(null)
 
   const scrollToBottom = () => {
@@ -87,22 +92,36 @@ const DatabaseChat = () => {
   }
 
   const addMessage = (type, content) => {
+    // 使用时间戳 + 随机数确保 ID 唯一性
     const newMessage = {
-      id: Date.now(),
+      id: `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       type,
       content,
       timestamp: new Date()
     }
     setMessages(prev => [...prev, newMessage])
+    return newMessage.id  // 返回消息 ID
   }
 
   const sendMessage = async (generateChart = false, sendToTelegram = false) => {
     if (!inputValue.trim() || isLoading) return
 
     const question = inputValue.trim()
+    
+    // 自动检测：如果问题中包含图表相关关键词，自动启用图表生成
+    const chartKeywords = ['图表', '图', 'chart', '可视化', '展示', '生成图表', '画图', '绘图', '绘制']
+    const shouldAutoGenerateChart = chartKeywords.some(keyword => 
+      question.toLowerCase().includes(keyword.toLowerCase())
+    )
+    
+    // 如果用户明确要求图表或者问题中有图表相关词汇，自动启用图表生成
+    const finalGenerateChart = generateChart || shouldAutoGenerateChart
+    
     addMessage('user', question)
     setInputValue('')
     setIsLoading(true)
+
+    console.log('📤 发送查询请求，生成图表:', finalGenerateChart, '(原始:', generateChart, ',自动检测:', shouldAutoGenerateChart, ')', '问题:', question.substring(0, 50))
 
     try {
       const response = await fetch('/api/database/query', {
@@ -112,7 +131,7 @@ const DatabaseChat = () => {
         },
         body: JSON.stringify({ 
           question,
-          generateChart,
+          generateChart: finalGenerateChart,
           sendToTelegram,
           chartType: 'auto'
         })
@@ -120,12 +139,37 @@ const DatabaseChat = () => {
 
       if (response.ok) {
         const data = await response.json()
-        addMessage('assistant', data.response)
+        console.log('📥 收到响应，包含图表:', !!data.chartBase64)
         
-        // 如果有图表数据，显示图表
+        // 合并文本响应和图表到一条消息中，避免重复 key
+        let responseContent = data.response
+        let chartInfo = null
+        
+        // 如果有图表数据，添加到响应内容中
         if (data.chartBase64) {
+          console.log('🖼️ 图表数据大小:', data.chartBase64.length, '字符')
           const chartImage = `data:image/png;base64,${data.chartBase64}`
-          addMessage('assistant', `📊 **生成的图表：**\n\n![查询结果图表](${chartImage})`)
+          responseContent += `\n\n📊 **生成的图表：**\n\n![查询结果图表](${chartImage})`
+          
+          // 保存图表配置和数据，用于交互式图表
+          if (data.chartConfig && data.chartData) {
+            chartInfo = {
+              config: data.chartConfig,
+              data: data.chartData,
+              imageBase64: data.chartBase64
+            }
+          }
+        } else {
+          console.log('⚠️ 响应中没有图表数据')
+        }
+        
+        // 添加消息，如果有关联图表则保存图表信息
+        const messageId = addMessage('assistant', responseContent)
+        if (chartInfo) {
+          // 将图表信息附加到消息上
+          setMessages(prev => prev.map(msg => 
+            msg.id === messageId ? { ...msg, chartInfo } : msg
+          ))
         }
       } else {
         const errorData = await response.json()
@@ -210,21 +254,85 @@ const DatabaseChat = () => {
     }
   }
 
-  const formatMessage = (content) => {
+  const handleViewChart = (chartInfo) => {
+    setCurrentChartConfig(chartInfo)
+    setShowChartModal(true)
+  }
+
+  const closeChartModal = () => {
+    setShowChartModal(false)
+    setCurrentChartConfig(null)
+    // 销毁图表实例
+    if (chartInstanceRef.current) {
+      chartInstanceRef.current.dispose()
+      chartInstanceRef.current = null
+    }
+  }
+
+  // 初始化 ECharts 图表
+  useEffect(() => {
+    if (showChartModal && currentChartConfig && chartContainerRef.current) {
+      // 销毁旧实例
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.dispose()
+      }
+      
+      // 创建新实例
+      const chartInstance = echarts.init(chartContainerRef.current)
+      chartInstanceRef.current = chartInstance
+      
+      // 设置配置
+      chartInstance.setOption(currentChartConfig.config, true)
+      
+      // 响应式调整
+      const handleResize = () => {
+        chartInstance.resize()
+      }
+      window.addEventListener('resize', handleResize)
+      
+      return () => {
+        window.removeEventListener('resize', handleResize)
+        if (chartInstanceRef.current) {
+          chartInstanceRef.current.dispose()
+          chartInstanceRef.current = null
+        }
+      }
+    }
+  }, [showChartModal, currentChartConfig])
+
+  const formatMessage = (content, message = null) => {
     // 处理Markdown格式的消息内容
     const lines = content.split('\n')
+    // 使用 content 的前几个字符和时间戳生成唯一前缀，确保不同消息的 key 不会重复
+    const contentHash = content.substring(0, 10).replace(/[^a-zA-Z0-9]/g, '')
     const formattedLines = lines.map((line, index) => {
+      // 生成唯一的 key
+      const uniqueKey = `${contentHash}-${index}-${line.substring(0, 10).replace(/[^a-zA-Z0-9]/g, '')}`
+      
       // 处理图表图片
       if (line.includes('data:image/png;base64,')) {
         const base64Match = line.match(/data:image\/png;base64,([^)]+)/)
         if (base64Match) {
+          // 检查消息是否有图表信息
+          const hasInteractiveChart = message?.chartInfo
+          
           return (
-            <div key={index} className="chart-image-container">
+            <div key={uniqueKey} className="chart-image-container">
               <img 
                 src={`data:image/png;base64,${base64Match[1]}`} 
                 alt="查询结果图表" 
                 className="chart-image"
               />
+              {hasInteractiveChart && (
+                <button
+                  className="chart-view-btn"
+                  onClick={() => handleViewChart(message.chartInfo)}
+                  title="查看交互式图表"
+                >
+                  <ExternalLink size={16} />
+                  查看交互式图表
+                </button>
+              )}
             </div>
           )
         }
@@ -232,40 +340,40 @@ const DatabaseChat = () => {
       
       // 处理表格
       if (line.includes('|') && line.includes('---')) {
-        return <div key={index} className="table-container"><pre className="table-content">{line}</pre></div>
+        return <div key={uniqueKey} className="table-container"><pre className="table-content">{line}</pre></div>
       }
       
       // 处理SQL代码块
       if (line.startsWith('```sql')) {
         const sqlContent = content.split('```sql')[1]?.split('```')[0]
-        return <pre key={index} className="sql-code">{sqlContent}</pre>
+        return <pre key={uniqueKey} className="sql-code">{sqlContent}</pre>
       }
       
       // 处理JSON代码块
       if (line.startsWith('```json')) {
         const jsonContent = content.split('```json')[1]?.split('```')[0]
-        return <pre key={index} className="json-code">{jsonContent}</pre>
+        return <pre key={uniqueKey} className="json-code">{jsonContent}</pre>
       }
       
       // 处理普通代码块
       if (line.startsWith('```')) {
         const codeContent = content.split('```')[1]?.split('```')[0]
-        return <pre key={index} className="code-block">{codeContent}</pre>
+        return <pre key={uniqueKey} className="code-block">{codeContent}</pre>
       }
       
       // 处理粗体文本
       if (line.includes('**') && line.includes('**')) {
         const parts = line.split('**')
         return (
-          <div key={index}>
+          <div key={uniqueKey}>
             {parts.map((part, i) => 
-              i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+              i % 2 === 1 ? <strong key={`${uniqueKey}-strong-${i}`}>{part}</strong> : part
             )}
           </div>
         )
       }
       
-      return <div key={index}>{line}</div>
+      return <div key={uniqueKey}>{line}</div>
     })
     
     return formattedLines
@@ -306,7 +414,7 @@ const DatabaseChat = () => {
         <div className="quick-queries-list">
           {quickQueries.map((query, index) => (
             <button
-              key={index}
+              key={`quick-query-${index}-${query.substring(0, 10)}`}
               className="quick-query-btn"
               onClick={() => handleQuickQuery(query)}
             >
@@ -340,13 +448,13 @@ const DatabaseChat = () => {
               {message.type === 'user' ? <User size={18} /> : <Bot size={18} />}
             </div>
             <div className="message-content">
-              {formatMessage(message.content)}
+              {formatMessage(message.content, message)}
             </div>
           </div>
         ))}
         
         {isLoading && (
-          <div className="message assistant">
+          <div key="loading-message" className="message assistant">
             <div className="message-avatar">
               <Bot size={18} />
             </div>
@@ -433,6 +541,27 @@ const DatabaseChat = () => {
           </div>
         </div>
       </div>
+
+      {/* 图表查看弹窗 */}
+      {showChartModal && currentChartConfig && (
+        <div className="chart-modal-overlay" onClick={closeChartModal}>
+          <div className="chart-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="chart-modal-header">
+              <h3>交互式图表</h3>
+              <button className="chart-modal-close" onClick={closeChartModal}>
+                <X size={20} />
+              </button>
+            </div>
+            <div className="chart-modal-content">
+              <div 
+                ref={chartContainerRef} 
+                className="chart-interactive-container"
+                style={{ width: '100%', height: '600px' }}
+              ></div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

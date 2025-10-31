@@ -265,9 +265,12 @@ class ChatService {
   async generateDatabaseResponse(question, options = {}) {
     try {
       console.log('🔍 检测到数据库查询意图:', question)
+      console.log('📊 图表生成选项:', JSON.stringify(options))
       
       // 执行数据库查询
       const queryResult = await this.sqlQueryService.executeQuery(question, options)
+      
+      console.log('✅ 查询执行完成，结果包含图表:', !!queryResult.chartBuffer)
       
       if (queryResult.success) {
         // 构建成功响应
@@ -293,7 +296,9 @@ class ChatService {
         if (queryResult.chartBuffer) {
           return {
             text: response,
-            chartBuffer: queryResult.chartBuffer
+            chartBuffer: queryResult.chartBuffer,
+            chartConfig: queryResult.chartConfig,  // ECharts 配置
+            chartData: queryResult.chartData  // 原始数据
           }
         }
         

@@ -354,6 +354,13 @@ app.post('/api/database/query', async (req, res) => {
   try {
     const { question, generateChart, sendToTelegram, chartType } = req.body
     
+    console.log('📥 收到数据库查询请求:', {
+      question: question?.substring(0, 50),
+      generateChart,
+      sendToTelegram,
+      chartType
+    })
+    
     if (!question) {
       return res.status(400).json({ error: '查询问题不能为空' })
     }
@@ -364,6 +371,8 @@ app.post('/api/database/query', async (req, res) => {
       chartType: chartType || 'auto'
     }
 
+    console.log('📊 图表生成选项:', options)
+    
     const result = await chatService.generateDatabaseResponse(question, options)
     
     const response = { 
@@ -372,9 +381,11 @@ app.post('/api/database/query', async (req, res) => {
       timestamp: new Date().toISOString()
     }
 
-    // 如果有图表数据，转换为base64
+    // 如果有图表数据，转换为base64，并传递配置和数据
     if (typeof result === 'object' && result.chartBuffer) {
       response.chartBase64 = result.chartBuffer.toString('base64')
+      response.chartConfig = result.chartConfig  // ECharts 配置
+      response.chartData = result.chartData  // 原始数据
     }
 
     res.json(response)

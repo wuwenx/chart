@@ -183,12 +183,17 @@ SQL 查询：`
 
   async executeQuery(question, options = {}) {
     try {
+      console.log('📝 SQLQueryService.executeQuery 被调用')
+      console.log('   问题:', question.substring(0, 50))
+      console.log('   选项:', JSON.stringify(options))
+      
       // 生成 SQL
       const sql = await this.generateSQL(question)
       console.log('🔍 生成的 SQL:', sql)
 
       // 执行查询
       const results = await this.databaseService.safeQuery(sql)
+      console.log('✅ 查询执行完成，结果条数:', results.length)
       
       // 解释结果
       const explanation = await this.explainResults(question, sql, results)
@@ -202,10 +207,18 @@ SQL 查询：`
       }
 
       // 如果启用了图表生成
+      console.log('📊 检查图表生成条件:')
+      console.log('   generateChart:', options.generateChart)
+      console.log('   结果条数:', results.length)
+      console.log('   条件满足:', options.generateChart && results.length > 0)
+      
       if (options.generateChart && results.length > 0) {
         try {
-          const chartBuffer = await this.chartGenerator.generateChart(results, options.chartType)
-          response.chartBuffer = chartBuffer
+          // 传递用户问题描述给图表生成器，让 AI 根据问题意图生成更合适的图表
+          const chartResult = await this.chartGenerator.generateChart(results, question, options.chartType)
+          response.chartBuffer = chartResult.imageBuffer
+          response.chartConfig = chartResult.echartsOption  // ECharts 配置
+          response.chartData = chartResult.rawData  // 原始数据
           console.log('📊 图表生成成功')
         } catch (chartError) {
           console.error('图表生成失败:', chartError.message)
