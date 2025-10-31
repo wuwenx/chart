@@ -8,7 +8,7 @@ class DatabaseService {
       port: 3306,
       user: 'admin',
       password: '0YvoGUzwhumnf2KGQvjN',
-      database: 'mm_admin_manage', // 默认数据库，可以根据需要修改
+      database: 'mm_data_center', // 默认数据库，可以根据需要修改
       charset: 'utf8mb4',
       timezone: '+08:00',
       acquireTimeout: 60000,
@@ -28,6 +28,64 @@ class DatabaseService {
       console.error('❌ 数据库连接失败:', error.message)
       throw error
     }
+  }
+
+  // 切换数据库
+  async setDatabase(databaseName) {
+    try {
+      // 如果连接的数据库名称相同，不需要切换
+      if (this.config.database === databaseName && this.connection) {
+        return true
+      }
+
+      // 关闭现有连接
+      if (this.connection) {
+        await this.disconnect()
+      }
+
+      // 更新配置
+      this.config.database = databaseName
+
+      // 重新连接
+      await this.connect()
+      
+      console.log(`✅ 已切换到数据库: ${databaseName}`)
+      return true
+    } catch (error) {
+      console.error('❌ 切换数据库失败:', error.message)
+      throw error
+    }
+  }
+
+  // 获取所有数据库列表
+  async getAllDatabases() {
+    try {
+      // 先连接到一个默认数据库（information_schema）来获取数据库列表
+      const tempConfig = {
+        ...this.config,
+        database: 'information_schema'
+      }
+      const tempConnection = await mysql.createConnection(tempConfig)
+      
+      const [rows] = await tempConnection.execute(
+        `SELECT SCHEMA_NAME as name 
+         FROM SCHEMATA 
+         WHERE SCHEMA_NAME NOT IN ('information_schema', 'performance_schema', 'mysql', 'sys')
+         ORDER BY SCHEMA_NAME`
+      )
+      
+      await tempConnection.end()
+      
+      return rows.map(row => row.name)
+    } catch (error) {
+      console.error('❌ 获取数据库列表失败:', error.message)
+      throw error
+    }
+  }
+
+  // 获取当前数据库名称
+  getCurrentDatabase() {
+    return this.config.database
   }
 
   async disconnect() {
@@ -53,8 +111,9 @@ class DatabaseService {
     }
   }
 
-  async getTableSchema(tableName) {
+  async getTableSchema(tableName, databaseName = null) {
     try {
+      const dbName = databaseName || this.config.database
       const sql = `
         SELECT 
           COLUMN_NAME,
@@ -66,7 +125,7 @@ class DatabaseService {
         WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ?
         ORDER BY ORDINAL_POSITION
       `
-      const rows = await this.executeQuery(sql, [this.config.database, tableName])
+      const rows = await this.executeQuery(sql, [dbName, tableName])
       return rows
     } catch (error) {
       console.error('❌ 获取表结构失败:', error.message)
@@ -74,8 +133,9 @@ class DatabaseService {
     }
   }
 
-  async getAllTables() {
+  async getAllTables(databaseName = null) {
     try {
+      const dbName = databaseName || this.config.database
       const sql = `
         SELECT 
           TABLE_NAME,
@@ -87,7 +147,7 @@ class DatabaseService {
         WHERE TABLE_SCHEMA = ?
         ORDER BY TABLE_NAME
       `
-      const rows = await this.executeQuery(sql, [this.config.database])
+      const rows = await this.executeQuery(sql, [dbName])
       return rows
     } catch (error) {
       console.error('❌ 获取表列表失败:', error.message)

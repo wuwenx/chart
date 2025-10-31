@@ -15,6 +15,9 @@ const DatabaseChat = () => {
   const [showTelegramConfig, setShowTelegramConfig] = useState(false)
   const [telegramConfig, setTelegramConfig] = useState({ botToken: '', chatId: '' })
   const [telegramStatus, setTelegramStatus] = useState(null)
+  const [databases, setDatabases] = useState([])
+  const [currentDatabase, setCurrentDatabase] = useState('')
+  const [isLoadingDatabase, setIsLoadingDatabase] = useState(false)
   const messagesEndRef = useRef(null)
 
   const scrollToBottom = () => {
@@ -24,6 +27,64 @@ const DatabaseChat = () => {
   useEffect(() => {
     scrollToBottom()
   }, [messages])
+
+  // 加载数据库列表和当前数据库
+  useEffect(() => {
+    fetchDatabaseList()
+    fetchCurrentDatabase()
+  }, [])
+
+  const fetchDatabaseList = async () => {
+    try {
+      const response = await fetch('/api/database/list')
+      if (response.ok) {
+        const data = await response.json()
+        setDatabases(data.databases || [])
+      }
+    } catch (error) {
+      console.error('获取数据库列表失败:', error)
+    }
+  }
+
+  const fetchCurrentDatabase = async () => {
+    try {
+      const response = await fetch('/api/database/current')
+      if (response.ok) {
+        const data = await response.json()
+        setCurrentDatabase(data.database || '')
+      }
+    } catch (error) {
+      console.error('获取当前数据库失败:', error)
+    }
+  }
+
+  const handleDatabaseSwitch = async (databaseName) => {
+    if (databaseName === currentDatabase) return
+
+    setIsLoadingDatabase(true)
+    try {
+      const response = await fetch('/api/database/switch', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ database: databaseName })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        setCurrentDatabase(databaseName)
+        addMessage('assistant', `✅ 已切换到数据库: ${databaseName}`)
+      } else {
+        const errorData = await response.json()
+        addMessage('assistant', `❌ 切换数据库失败：${errorData.message}`)
+      }
+    } catch (error) {
+      addMessage('assistant', '❌ 切换数据库失败，请检查网络连接')
+    } finally {
+      setIsLoadingDatabase(false)
+    }
+  }
 
   const addMessage = (type, content) => {
     const newMessage = {
@@ -218,6 +279,26 @@ const DatabaseChat = () => {
           <span>数据库查询助手</span>
         </div>
         <div className="chat-subtitle">用自然语言查询数据库</div>
+        <div className="database-selector">
+          <label htmlFor="database-select">当前数据库：</label>
+          <select
+            id="database-select"
+            value={currentDatabase}
+            onChange={(e) => handleDatabaseSwitch(e.target.value)}
+            disabled={isLoadingDatabase || databases.length === 0}
+            className="database-select"
+          >
+            {databases.length === 0 ? (
+              <option value="">加载中...</option>
+            ) : (
+              databases.map((db) => (
+                <option key={db} value={db}>
+                  {db}
+                </option>
+              ))
+            )}
+          </select>
+        </div>
       </div>
 
       <div className="quick-queries">

@@ -1,6 +1,18 @@
 {
   "logs": [
     {
+      "timestamp": "2025-10-31T02:52:42.216Z",
+      "level": "info",
+      "message": "停止监控Jenkins构建",
+      "details": null
+    },
+    {
+      "timestamp": "2025-10-31T02:52:37.999Z",
+      "level": "info",
+      "message": "开始监控Jenkins构建",
+      "details": "任务: test/web/web-mm-admin-new"
+    },
+    {
       "timestamp": "2025-10-24T10:08:54.417Z",
       "level": "info",
       "message": "触发构建: test/web/web-mm-admin-new",
@@ -587,18 +599,6 @@
       "level": "warn",
       "message": "飞书服务未配置，跳过通知",
       "details": "✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成"
-    },
-    {
-      "timestamp": "2025-10-22T08:31:04.056Z",
-      "level": "debug",
-      "message": "构建状态检查: success",
-      "details": null
-    },
-    {
-      "timestamp": "2025-10-22T08:30:33.803Z",
-      "level": "info",
-      "message": "AI决策: ✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成",
-      "details": "{\"shouldNotify\":true,\"message\":\"✅ 构建成功！任务 test/web/web-mm-admin-new 构建 #183 已完成\",\"status\":\"success\",\"buildInfo\":{\"number\":183,\"url\":\"https://jks.popfun.xyz/job/test/job/web/job/web-mm-admin-new/183/\",\"timestamp\":1761110028292,\"duration\":9286,\"result\":\"SUCCESS\",\"building\":false,\"builder\":\"N/A\",\"description\":\"<span style='padding-right: 10px;font-weight:bold;font-size:13px;color: #1E90FF;'>发布人:owen     版本: origin/develop  环境:test1</span>\",\"changeSet\":{\"_class\":\"hudson.plugins.git.GitChangeSetList\",\"items\":[],\"kind\":\"git\"}},\"timestamp\":\"2025-10-22T08:30:33.802Z\"}"
     }
   ],
   "lastBuildInfo": {
@@ -641,5 +641,5 @@
     }
   },
   "buildStatus": "success",
-  "lastUpdated": "2025-10-24T10:08:54.417Z"
+  "lastUpdated": "2025-10-31T02:52:42.216Z"
 }

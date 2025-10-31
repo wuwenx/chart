@@ -406,6 +406,74 @@ app.get('/api/database/test', async (req, res) => {
   }
 })
 
+// 获取数据库列表
+app.get('/api/database/list', async (req, res) => {
+  try {
+    await chatService.initializeDatabaseService()
+    const databases = await chatService.sqlQueryService.getDatabaseList()
+    res.json({ 
+      success: true,
+      databases
+    })
+  } catch (error) {
+    console.error('获取数据库列表错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '获取数据库列表失败',
+      message: error.message
+    })
+  }
+})
+
+// 获取当前数据库
+app.get('/api/database/current', async (req, res) => {
+  try {
+    await chatService.initializeDatabaseService()
+    const currentDatabase = chatService.sqlQueryService.getCurrentDatabase()
+    res.json({ 
+      success: true,
+      database: currentDatabase
+    })
+  } catch (error) {
+    console.error('获取当前数据库错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '获取当前数据库失败',
+      message: error.message
+    })
+  }
+})
+
+// 切换数据库
+app.post('/api/database/switch', async (req, res) => {
+  try {
+    const { database } = req.body
+    
+    if (!database) {
+      return res.status(400).json({ 
+        success: false,
+        error: '数据库名称不能为空'
+      })
+    }
+
+    await chatService.initializeDatabaseService()
+    await chatService.sqlQueryService.switchDatabase(database)
+    
+    res.json({ 
+      success: true,
+      message: `已切换到数据库: ${database}`,
+      database
+    })
+  } catch (error) {
+    console.error('切换数据库错误:', error)
+    res.status(500).json({ 
+      success: false,
+      error: '切换数据库失败',
+      message: error.message
+    })
+  }
+})
+
 // 配置Telegram Bot
 app.post('/api/telegram/configure', async (req, res) => {
   try {

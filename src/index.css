@@ -436,6 +436,53 @@ body {
   opacity: 0.9;
 }
 
+.database-selector {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.database-selector label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.database-select {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.database-select:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.database-select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.database-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.database-select option {
+  background: #4facfe;
+  color: white;
+}
+
 .quick-queries {
   padding: 15px 20px;
   background: #f8f9fa;

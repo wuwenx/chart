@@ -106,6 +106,38 @@ SQL 查询：`
     }
   }
 
+  // 切换数据库
+  async switchDatabase(databaseName) {
+    try {
+      // 切换数据库
+      await this.databaseService.setDatabase(databaseName)
+      
+      // 重新初始化数据库信息
+      this.databaseInfo = null
+      await this.initialize()
+      
+      return true
+    } catch (error) {
+      console.error('❌ 切换数据库失败:', error.message)
+      throw error
+    }
+  }
+
+  // 获取数据库列表
+  async getDatabaseList() {
+    try {
+      return await this.databaseService.getAllDatabases()
+    } catch (error) {
+      console.error('❌ 获取数据库列表失败:', error.message)
+      throw error
+    }
+  }
+
+  // 获取当前数据库
+  getCurrentDatabase() {
+    return this.databaseService.getCurrentDatabase()
+  }
+
   async generateSQL(question) {
     try {
       if (!this.databaseInfo) {
